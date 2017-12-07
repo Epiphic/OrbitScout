@@ -1,0 +1,54 @@
+<template name="data">
+	 <!--{{#if isInRole 'Viewer'}}-->
+          <div>
+	<!--<button class="allDataShow">Show All Data</button>-->
+	<input id="buttonDownload" class="btn btn-info" type="submit" value="Download as CSV">
+	<!--Within the JS Alldata function in Data.js helper tempalte.-->
+	
+	<input type="text" class="searchbyMatch" placeholder="Team Number Ex. 1360">
+	<input id="searchTeam" class="btn btn-info" type="submit" value="Search by Team">
+
+
+	{{#each Alldata}}
+		<div class="panel panel-success">
+		 <div class="panel-heading">Team: {{team}} || Match Number: {{match}} || Alliance Station: {{station}} || Scouted By: {{scouter}}</div>
+
+		  <!-- Table -->
+		  <table class="table" id="AllDataTable">
+		    <tr>
+			    <th>Gear Stats</th>
+			    <th>KPA Stats</th> 
+			    <th>Endgame Stats</th>
+			    <th>Other Stats</th>
+			    <th>Presto Stats</th>
+
+			</tr>
+
+			<tr>
+			    <td>Gear Auto: {{gearAuto}}</td>
+			    <td>KPA Auto: {{kpaAuto}}</td> 
+			    <td>Cimbed: {{teleClimb}}</td>
+			    <td>Baseline Crossed: {{baselineCrossed}}</td>
+			    <td>Presto: {{presto}}</td>
+			</tr>
+
+			<tr>
+			    <td>Gears Tele: {{teleGear}}</td>
+			    <td>KPA Tele: {{teleKpa}}</td> 
+			    <td>Attempted Gears: {{teleAttemptedGear}}</td>
+			    <td>Died: {{teleDied}}</td>
+			</tr>
+
+			
+		  </table>
+
+		</div>
+
+
+	{{/each}}
+
+	</div>
+        <!--{{/if}}-->
+
+	
+</template>

@@ -1,0 +1,114 @@
+<template name="matchDataInsert">
+
+ <!--{{#if isInRole 'Viewer'}}-->
+
+    <div>
+    <form>
+  
+    <div class="page-header">
+      <p class="MatchInfo">Match Info</p>
+
+      <input type="text" class="newMatchNumber" placeholder="Match Number Ex. 54">
+      <input type="text" class="newMatchTeam" placeholder="Team Number Ex. 254">
+      <center> 
+         <select id="newAllianceStation" class="form-control" style="max-width: 175px">
+          <option value="red1">Red 1</option>
+          <option value="red2">Red 2</option>
+          <option value="red3">Red 3</option>
+          <option value="blue1">Blue 1</option>
+          <option value="blue2">Blue 2</option>
+          <option value="blue3">Blue 3</option>
+        </select>
+      </center>
+     
+
+      <input type="text" class="newScouter" placeholder="Scouter Ex. Brian M">
+
+    </div>
+
+      
+    <!-- AUTO VALUES BEGIN-->
+    <div class="page-header">
+      <p class="Auto">Auto</p>
+
+      <br>
+      <p>Auto Mobility</p>
+      <input type="radio" id="AutoRadio3-1" name="crossedbaseline" value="crossYes"><label for="AutoRadio3-1">Yes</label>
+      <input type="radio" id="AutoRadio3-2" name="crossedbaseline" value="crossNo"><label for="AutoRadio3-2">No</label><br>
+
+      <br>
+      <p>Which Auto Gear</p>
+      <input type="radio" id="AutoRadio1-1" name="autoGear" value="gearSideWorked"><label for="AutoRadio1-1">Successful Side Gear</label>
+      <input type="radio" id="AutoRadio1-2" name="autoGear" value="gearMiddleWorked"><label for="AutoRadio1-2">Successful Middle Gear</label>
+      <input type="radio" id="AutoRadio1-3" name="autoGear" value="gearSideTried"><label for="AutoRadio1-3">Tried Side Gear</label>
+      <input type="radio" id="AutoRadio1-4" name="autoGear" value="gearMiddleTried"><label for="AutoRadio1-4">Tried Middle Gear</label>
+      <input type="radio" id="AutoRadio1-5" name="autoGear" value="gearNo"><label for="AutoRadio1-5">No Gear Auto</label><br>
+   
+      
+      <br>
+      <p>Good High KPA Auto? (15 balls +) </p>
+      <input type="radio" id="AutoRadio2-1" name="kpaAuto" value="Yes"><label for="AutoRadio2-1">Yes</label>
+      <input type="radio" id="AutoRadio2-2" name="kpaAuto" value="No"><label for="AutoRadio2-2">No</label><br>
+      
+      
+
+      <br>
+
+    <!-- TELO OP VALUES BEGIN-->
+    </div>
+
+       
+
+    <div class="page-header">
+      <p class="Tele">Tele-Op</p>
+     
+      <br>
+      <p> Gears Attempted : Gears Scored</p>
+      <input id="subtractGearAttempted" class="btn btn-info" type="submit" value="-1">{{GearsAttempted}}<input id="addGearAttempted" class="btn btn-info" type="submit" value="+1">
+
+      <input id="subtractGear" class="btn btn-info" type="submit" value="-1">{{Gears}}<input id="addGear" class="btn btn-info" type="submit" value="+1"><br>
+
+      <br>
+      <p>How much KPA did they roughly do?</p>
+      <input type="radio" id="TeleRadio1-1" name="radioKPA" value="lowKPA"><label for="TeleRadio1-1">0-15</label>
+      <input type="radio" id="TeleRadio1-2" name="radioKPA" value="medKPA"><label for="TeleRadio1-2">15-30</label>
+      <input type="radio" id="TeleRadio1-3" name="radioKPA" value="highKPA"><label for="TeleRadio1-3">30+</label>
+
+      <br>
+      <p>Did they Climb?</p>
+      <input type="radio" id="TeleRadio2-1" name="climb" value="Yes"><label for="TeleRadio2-1">Yes</label>
+      <input type="radio" id="TeleRadio2-2" name="climb" value="Tried"><label for="TeleRadio2-2">Tried</label>
+      <input type="radio" id="TeleRadio2-3" name="climb" value="notTried"><label for="TeleRadio2-3">Not Tried</label><br>
+
+      <br>
+      <p>Did they die during their match?</p>
+      <input type="radio" id="TeleRadio3-1" name="matchDied" value="Yes"><label for="TeleRadio3-1">Yes</label>
+      <input type="radio" id="TeleRadio3-2" name="matchDied" value="No"><label for="TeleRadio3-2">No</label><br>
+
+      <br>
+      <p>Did they get any Presto-Pieces?</p>
+      <input type="radio" id="TeleRadio4-1" name="Presto" value="PrestoGear"><label for="TeleRadio4-1">Presto-Gear</label>
+      <input type="radio" id="TeleRadio4-2" name="Presto" value="PrestoFuel"><label for="TeleRadio4-2">Presto-Fuel</label>
+      <input type="radio" id="TeleRadio4-3" name="Presto" value="PrestoNone"><label for="TeleRadio4-3">Neither</label>
+      <input type="radio" id="TeleRadio4-4" name="Presto" value="PrestoBoth"><label for="TeleRadio4-4">Both</label><br>
+
+    </div>
+
+    <div class="page-header">
+      <p class="MatchInfo">Qualitative Data</p>
+
+      <input type="text" class="qualitativeData" placeholder="Ex. They have a ground gear">
+
+    </div>
+
+    
+   <!--{{#if isInRole 'Scouter'}}-->
+    <input id="submitMatchData" class="btn btn-info" type="submit" value="Submit Data">
+  <!--{{/if}}-->
+</form>
+    
+    </div>
+  <!--{{/if}}-->
+
+  	  	
+</template>

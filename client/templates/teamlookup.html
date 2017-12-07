@@ -1,0 +1,83 @@
+<template name="teamlookup">
+
+	 <!--{{#if isInRole 'Viewer'}}-->
+
+
+          <div>
+          	<input type="text" class="teamLookup" placeholder="Team Number Ex. 1360">
+	
+				<input id="lookupTeam" class="btn btn-info" type="submit" value="Submit">
+
+
+				<!--<button class="lookupTeam">Lookup Team</button><br>-->
+
+				
+				<div id="rectangleTeamLookup">
+					
+
+					<!--Show the calculated averages in a table-->
+
+					<div class="panel panel-primary">
+					  <!-- Default panel contents -->
+					  <div class="panel-heading">Team Stats</div>
+
+					  <!-- Table -->
+					  <table class="table">
+					    <tr>
+						    <th>AUTO</th>
+						    <th>Average</th> 
+						    <th>TELE-OP</th>
+						    <th>Average</th>
+						</tr>
+
+						<tr>
+						    <td>Middle Gear Stats:</td>
+						    <td>{{Teamlookup.AutoMiddleGear}}</td> 
+						    <td>Gear Missed Average: </td>
+						    <td>{{Teamlookup.gearMissedAverage}}</td>
+						</tr>
+
+						<tr>
+						    <td>Side Gear Stats:</td>
+						    <td>{{Teamlookup.AutoSideGear}}</td> 
+						    <td>Gear Average:</td>
+						    <td>{{Teamlookup.gearAverage}}</td>
+						</tr>
+
+						<tr>
+						    <td>Crossed Baseline Stats:</td>
+						    <td>{{Teamlookup.AutoBase}}</td> 
+						    <td>Shooting Stats:</td>
+						    <td>{{Teamlookup.teleKPA}}</td>
+						</tr>
+
+						<tr>
+						    <td>Auto KPA Stats:</td>
+						    <td>{{Teamlookup.AutoKPA}}</td> 
+						    <td>Climbing Stats:</td>
+						    <td>{{Teamlookup.teleClimb}}</td>
+						</tr>
+
+						<tr>
+						    <td>Presto Stats:</td>
+						    <td>{{Teamlookup.Presto}}</td> 
+						    <td>Died Stats:</td>
+						    <td>{{Teamlookup.teleDied}}</td>
+						</tr>
+
+					  </table>
+
+				</div>
+								
+					{{> c3 myChartData}}
+
+				</div>
+			          
+          </div>
+     <!--{{/if}}-->
+     
+     {{Teamlookup.QualitativeData}} 
+	<img src={{TeamPicture}}>
+	
+</template>	
+

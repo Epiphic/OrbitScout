@@ -1,0 +1,14 @@
+<template name="settings">
+	{{#if isInRole 'Administrator'}}
+
+		<input id="Check" class="btn btn-info" type="submit" value="Check for Duplicates">
+
+		<div>
+		<p> These are some Duplicates.... FIX THEM</p>
+			{{DuplicateMatches}}
+
+		</div>
+
+	{{/if}}
+
+</template>

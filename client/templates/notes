@@ -1,0 +1,51 @@
+Notes:
+
+- cant select stuff is something before isnt sleected - MAX BOORDS
+
+- Climbed the last 3 matches with a 43% climb average - MAX BOORD
+
+auto advqnced
+- %hit middle, middle last 3, 
+- %hit side, side last 3 
+
+whos best at middle whos best at side, if its same one whos second best
+
+what autos each team should do
+
+lright so heres my dream strategy sheet. normally made by a human but i wanna automate it next season
+
+
+[8:39] 
+(gonna use 2017 game to explain it) (edited)
+
+
+[8:39] 
+basically i want a 2, 3 and 4 rotor percentage based on normal distribution
+
+
+[8:39] 
+for both sides
+
+
+[8:39] 
+some kpa numbers
+
+
+[8:40] 
+something that takes that and figures out based on pit scouting and qualitative data how deffendable teams are and how good each alliance is at playing D
+
+
+[8:41] 
+and from that it spits out a 3+ D win percentage
+
+
+[8:41] 
+same with 4
+
+
+[8:41] 
+and the same with KPA
+
+
+[8:42] 
+and then shits out a graph on what should work best and by what statistical percentage

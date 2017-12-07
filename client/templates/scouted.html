@@ -1,0 +1,22 @@
+<template name="scouted">
+
+<!--{{#if isInRole 'Viewer'}}-->
+    <div>
+
+    <input type="text" class="eventCode" placeholder="Event Code: Ex. 2017onham">	
+	<input id="eventRefresh" class="btn btn-info" type="submit" value="Refresh">
+
+	<div id="table">
+    	{{> reactiveTable collection=MatchSchedule settings=settings}}
+  	</div>
+
+
+    </div>
+
+  <!--{{/if}}--> 
+	
+
+  
+
+</template>
+
