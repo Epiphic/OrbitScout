@@ -15,7 +15,7 @@ Template.settings.events({
 		});
 
 		//For each team at the event
-		for(i=0; i < Teams.get().data.length; i++){
+		/*for(i=0; i < Teams.get().data.length; i++){
 
 			//create a variable that ios set to the team it is currently cehcking
 			var CurrentCheckingTeam = Teams.get().data[i].key.replace("frc", "")
@@ -29,7 +29,9 @@ Template.settings.events({
 			}
 
 		//set the local variable to out glbal variable
-		Duplicates.set(TotalDuplicateArray);
+		Duplicates.set(TotalDuplicateArray);*/
+
+		console.log(DuplicateMatches.find().fetch())
 	
 	}
 });
@@ -39,7 +41,7 @@ Template.settings.events({
 Template.settings.helpers({
 	DuplicateMatches: function() {	
 		
-		return Duplicates.get();
+		return DuplicateMatches.find().fetch();
 	},
 	
 });

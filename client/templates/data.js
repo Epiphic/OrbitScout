@@ -127,6 +127,7 @@ Template.matchDataInsert.events({
 
 
 		else {
+			
 
 		console.log('IT WORKS KIDO');
 		
@@ -277,16 +278,34 @@ Template.matchDataInsert.events({
 			
 
 		}
-		console.log(matchData);
 
-		Data.insert(matchData);
-		console.log(Data.find().fetch());
+		var Duplicate = false;
+		var CurrentTeam = Data.find({team}).fetch();	
+		console.log(CurrentTeam)	
 
+		//Lopps the amount of times that there is data for a team
+		for(var i in CurrentTeam){
+			console.log("we tried: " + i)
+				
+			//if the current checking match has been submitted before then 
+			if(numb == CurrentTeam[i].match){
+				console.log("sent to dups")
+				DuplicateMatches.insert(matchData);
+				Duplicate = true;
+				break;
+							
+			}
+
+		}
 		
-		e.target.text.reset();
+		if(Duplicate == false){
+			console.log("send to nromal")
+			Data.insert(matchData);
+			}
+		
 		}
 
-
+		e.target.text.reset();
 			
 	}
 });
