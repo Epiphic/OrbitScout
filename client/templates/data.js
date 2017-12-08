@@ -1,4 +1,6 @@
 import { Template } from 'meteor/templating';
+import { SortedData } from "../../lib/collections/averages.js"
+
 
 var currentSearch = new ReactiveVar("");
 
@@ -152,7 +154,6 @@ Template.matchDataInsert.events({
 			presto: presto,
 			qualitative: qualitative,
 			
-
 		}
 
 		var Duplicate = false;
@@ -177,6 +178,9 @@ Template.matchDataInsert.events({
 		if(Duplicate == false){
 			console.log("send to nromal")
 			Data.insert(matchData);
+
+			SortedData();
+			console.log("SPAGEHTTI" + SortedData.get())
 			}
 		
 		}
