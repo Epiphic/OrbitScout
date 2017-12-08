@@ -1,4 +1,6 @@
 import { Teamlookup } from "../../lib/collections/averages.js"
+import { AutoStats } from "../../lib/collections/averages.js"
+import { SortedData } from "../../lib/collections/averages.js"
 
 var Teams = ReactiveVar();
 var Duplicates = ReactiveVar();
@@ -31,7 +33,11 @@ Template.settings.events({
 		//set the local variable to out glbal variable
 		Duplicates.set(TotalDuplicateArray);*/
 
-		console.log(DuplicateMatches.find().fetch())
+		//console.log(DuplicateMatches.find().fetch())
+
+		SortedData();
+
+
 	
 	}
 });

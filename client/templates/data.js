@@ -77,7 +77,7 @@ Template.matchDataInsert.events({
 
 	'click #submitMatchData': function (e) {
 		
-		
+
 		var matchData = {};
 
 		//Match Info Values
@@ -131,124 +131,6 @@ Template.matchDataInsert.events({
 
 		console.log('IT WORKS KIDO');
 		
-
-
-		//----------------------------------------------------MATCH POINTS FOR GRAPHS CALC---------------------------------------------------------------
-		
-		//--------------------KPA TELLEOP STATS FOR GRAPH-----------------------
-
-		//2017 KPA tele stats
-		var KPAteleGraph = 0;
-		
-		if(teleKpa == "lowKPA"){
-			KPAteleGraph += 15;
-		}
-		else if(teleKpa == "medKPA"){
-			KPAteleGraph += 25
-		}
-		else{
-			KPAteleGraph += 35
-		}
-
-
-		//--------------------KPA AUTO STATS FOR GRAPH-----------------------
-
-		//2017 KPA auto stats
-		var KPAautoGraph = 0;
-		
-		if(kpaAuto == "Yes"){
-			KPAautoGraph += 20;
-		}
-
-
-		//--------------------MIDDLE GEAR AUTO STATS FOR GRAPH-----------------------
-
-		//2017 Middle gear auto check
-		var MiddleGearGraph = 0;
-		
-		if(gearAuto == "gearMiddleWorked"){
-			MiddleGearGraph += 20;
-		}
-
-		//--------------------SIDEGEAR AUTO STATS FOR GRAPH-----------------------
-
-		//2017 Side gear auto check
-		var SideGearGraph = 0;
-		
-		if(gearAuto == "gearSideWorked"){
-			SideGearGraph += 20;
-		}
-
-
-		//--------------------BASELINE STATS FOR GRAPH-----------------------
-
-		//2017 Baseline corssed is 5 points
-		var BaselineCrossedGraph = 0;
-		
-		if(baselineCrossed == "crossYes"){
-			baselineCrossed += 5;
-		}
-
-		//--------------------AUTO MATCH GRAPH-----------------------
-
-		//Assuming a gear in auto is worth X amount of points
-		//Assuming a good auto KPA is worth X amount of points
-		var AutoPoints = 0;
-		
-		if(gearAuto == "gearMiddleWorked" || gearAuto == "gearSideWorked"){
-			AutoPoints += 40;
-		}
-		else if (kpaAuto == "Yes"){
-			AutoPoints += 20;
-		}
-		else if (baselineCrossed == "crossYes"){
-			AutoPoints += 5;
-		}
-
-		//--------------------TELE MATCH GRAPH---------------------
-
-		//Assuming a gear in Tele is worth X amount of points
-		var TelePoints = 0;
-		
-		TelePoints += teleGear*20;
-
-		if (teleKpa == "medKPA"){
-			TelePoints += 15;
-		}
-		else if (teleKpa == "highKPA"){
-			TelePoints += 30;
-		}
-
-		//--------------------ENDGAME MATCH GRAPH---------------------
-
-		//Assuming a gear in Tele is worth X amount of points
-		var GraphClimb = 0;
-		
-
-		if(teleClimb == "Yes"){
-			GraphClimb += 50;
-		}
-
-		//--------------------PRESTO MATCH GRAPH---------------------
-
-		//Assuming a gear in Tele is worth X amount of points
-		var PrestoGraph = 0;
-		
-
-		if(presto == "PrestoGear" || "PrestoFuel"){
-			if(presto == "PrestoBoth"){
-				PrestoGraph += 50;
-
-			}	
-
-			else{
-				PrestoGraph += 20;
-			}		
-		}
-		
-
-
-
 		matchData = {
 			//Match Info 
 			match:numb, 
@@ -269,12 +151,6 @@ Template.matchDataInsert.events({
 			teleDied:teleDied,
 			presto: presto,
 			qualitative: qualitative,
-
-			//Graph Info
-			TelePoints: TelePoints,
-			AutoPoints: AutoPoints,
-			GraphClimb: GraphClimb,
-			PrestoGraph: PrestoGraph,
 			
 
 		}
