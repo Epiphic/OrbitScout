@@ -1,6 +1,8 @@
 import { Teamlookup } from "../../lib/collections/averages.js"
 import { TeamPoints } from "../../lib/collections/averages.js"
 import { SortedData } from "../../lib/collections/averages.js"
+import { AdvancedStats } from "../../lib/collections/averages.js"
+
 
 TeamData = new ReactiveVar();
 red1 = new ReactiveVar();
@@ -108,7 +110,16 @@ Template.strategy.events({
 		red2.set('1360')
 		red3.set('1241')
 
+		blue1.set('1325')
+		blue2.set('1360')
+		blue3.set('1241')
+
+		console.log(SortedData())
 		console.log(SortedData()[red1.get()]);
+
+		console.log(AdvancedStats(red1.get(),red2.get(),red3.get()));
+
+
 		
 	}
 });
@@ -145,6 +156,30 @@ Template.strategy.helpers({
 	},
 	TeamNumberRed3: function() {
 		return red3.get();
+	},
+
+	//BLUE 1
+	TeamDataBlue1: function() {			
+		return SortedData()[blue1.get()];		
+	},
+	TeamNumberBlue1: function() {
+		return blue1.get();
+	},
+
+	//BLUE 2
+	TeamDataBlue2: function() {			
+		return SortedData()[blue2.get()];		
+	},
+	TeamNumberBlue2: function() {
+		return blue2.get();
+	},
+
+	//BLUE 3
+	TeamDataBlue3: function() {			
+		return SortedData()[blue3.get()];		
+	},
+	TeamNumberblue3: function() {
+		return blue3.get();
 	},
 
 	
