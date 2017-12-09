@@ -1,11 +1,12 @@
-<template name="strategy">
-  	 	 <!--{{#if isInRole 'Viewer'}}-->
-	<select id="strategySearch" class="form-control">
-	    <option value="Manual">Manual</option>
-	    <option value="Next">Next</option>
-		<option value="NextIn">Next In</option>
-    </select>
+<template name="strategy" >
+ 	<!--{{#if isInRole 'Viewer'}}-->
 
+	<select id="strategySearch" class="form-control">
+	    <option value="Manual">Search for Matches: Manual</option>
+	    <option value="Next">Search for Matches: Next</option>
+		<option value="NextIn">Search for Matches: Next In</option>
+    </select>
+    <br>
     <tr>
 	    <td>Team Number: </td>
 	    <td><input type="text" id="red1"  placeholder="Team Number Ex. 1360"></td> 
@@ -15,24 +16,129 @@
 	    <td><input type="text" id="blue2" placeholder="Team Number Ex. 4001"></td>
 	    <td><input type="text" id="blue3" placeholder="Team Number Ex. 771"></td>
 	</tr>
+	<br>
+	<br>
 
 	<div>
-
-	  <!-- Nav tabs -->
+	 	  <!-- Nav tabs -->
 	  <ul class="nav nav-tabs" role="tablist">
 	    <li role="strategy" class="active"><a href="#auto" aria-controls="auto" role="tab" data-toggle="tab">Auto</a></li>
 	    <li role="strategy"><a href="#tele" aria-controls="tele" role="tab" data-toggle="tab">Tele</a></li>
 	    <li role="strategy"><a href="#end" aria-controls="end" role="tab" data-toggle="tab">Endgame</a></li>
 	    <li role="strategy"><a href="#overall" aria-controls="overall" role="tab" data-toggle="tab">Overall</a></li>
-
 	    <li role="strategy"><a href="#old" aria-controls="old" role="tab" data-toggle="tab">old</a></li>
+	    <li role="strategy" style="font-weight: bold; text-align: center;"><a>Next Match Number: {{MatchNumber}}</a></li>
+	    <li role="strategy" style="font-weight: bold; text-align: center;"><a>Next Match for 1360: {{MatchNumberIn}}</a></li>
+	
 	  </ul>
-
+	  <br>
+	 
 	  <!-- Tab panes -->
 	  <div class="tab-content">
 	   
 	    <div role="tabpanel" class="tab-pane active" id="auto">
-	    	 <!--                                               AUTO PANEL                                             -->
+	    	<!--                                               AUTO PANEL  FOR RED TEAMS                                          -->
+	    	<br>
+	    	 <div class="col-sm-9">
+		      <div class="well">
+		        <h4>Red Team</h4>
+		        <p>Most Beneficial Auto Strategy: </p>
+		      </div>
+		  
+		      <div class="row">
+		        <div class="col-sm-4">
+		          <div class="well red" >
+		          	<h4 style="font-weight: bold; text-align: center;">{{TeamNumberRed1}}</h4>
+		          	<!--===================================== RED 1'S BOX0 -=====================================-->
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{TeamDataRed1.advancedaverages.ChancetoHit_Baseline}}%; color: silver;">
+					    Baseline: {{TeamDataRed1.advancedaverages.ChancetoHit_Baseline}}%
+					  </div>
+					</div>
+
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{TeamDataRed1.advancedaverages.ChancetoHit_MiddleGear}}%; color: silver;">
+					    Middle Gear: {{TeamDataRed1.advancedaverages.ChancetoHit_MiddleGear}}%
+					  </div>
+					</div>
+
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{TeamDataRed1.advancedaverages.ChancetoHit_SideGear}}%; color: silver;">
+					    Side Gear: {{TeamDataRed1.advancedaverages.ChancetoHit_SideGear}}%
+					  </div>
+					</div>
+		            
+		          </div>
+		        </div>
+
+		        <!--===================================== RED 2'S BOX0 -=====================================-->
+		         <div class="col-sm-4">
+		          <div class="well red">
+		          	<h4 style="font-weight: bold; text-align: center;">{{TeamNumberRed2}}</h4>
+		          	
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{TeamDataRed2.advancedaverages.ChancetoHit_Baseline}}%; color: silver;">
+					    Baseline: {{TeamDataRed2.advancedaverages.ChancetoHit_Baseline}}%
+					  </div>
+					</div>
+
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{TeamDataRed2.advancedaverages.ChancetoHit_MiddleGear}}%; color: silver;">
+					    Middle Gear: {{TeamDataRed2.advancedaverages.ChancetoHit_MiddleGear}}%
+					  </div>
+					</div>
+
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{TeamDataRed2.advancedaverages.ChancetoHit_SideGear}}%; color: silver;">
+					    Side Gear: {{TeamDataRed2.advancedaverages.ChancetoHit_SideGear}}%
+					  </div>
+					</div>
+		            
+		          </div>
+		        </div>
+
+		        <!--===================================== RED 3'S BOX0 -=====================================-->
+		         <div class="col-sm-4">
+		          <div class="well red">
+		          	<h4 style="font-weight: bold; text-align: center;">{{TeamNumberRed3}}</h4>
+		          	
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{TeamDataRed3.advancedaverages.ChancetoHit_Baseline}}%; color: silver;">
+					    Baseline: {{TeamDataRed3.advancedaverages.ChancetoHit_Baseline}}%
+					  </div>
+					</div>
+
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{TeamDataRed3.advancedaverages.ChancetoHit_MiddleGear}}%; color: silver;">
+					    Middle Gear: {{TeamDataRed3.advancedaverages.ChancetoHit_MiddleGear}}%
+					  </div>
+					</div>
+
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{TeamDataRed3.advancedaverages.ChancetoHit_SideGear}}%; color: silver;">
+					    Side Gear: {{TeamDataRed3.advancedaverages.ChancetoHit_SideGear}}%
+					  </div>
+					</div>
+		            
+		          </div>
+		        </div>
+
+		      </div>
+
+		      <div class="row">
+		        <div class="col-sm-8">
+		          <div class="well">
+		            <p>Text</p> 
+		          </div>
+		        </div>
+		        <div class="col-sm-4">
+		          <div class="well">
+		            <p>Text</p> 
+		          </div>
+		        </div>
+		       </div>
+			 </div>
+       
 	    	
 
 	    </div>

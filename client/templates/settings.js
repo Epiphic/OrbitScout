@@ -37,6 +37,9 @@ Template.settings.events({
 
 		SortedData();
 
+		
+
+
 
 	
 	}

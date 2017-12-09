@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body{
-	background: #F7931E;
+	background: silver;
 	//color: #2F7FC4;
 }
 
@@ -130,4 +130,9 @@ p {
 	text-align: center;
 	font-weight: bold;
 	font-size: 100%;
+}
+
+.red{
+background-color: tomato !important;
+border-color: tomato
 }

@@ -129,7 +129,7 @@ Template.matchDataInsert.events({
 
 
 		else {
-			
+			e.preventDefault();
 
 		console.log('IT WORKS KIDO');
 		
@@ -178,14 +178,14 @@ Template.matchDataInsert.events({
 		if(Duplicate == false){
 			console.log("send to nromal")
 			Data.insert(matchData);
-
-			SortedData();
-			console.log("SPAGEHTTI" + SortedData.get())
+			
+					
+			
 			}
 		
 		}
 
-		e.target.text.reset();
+		//e.target.text.reset();
 			
 	}
 });

@@ -2,11 +2,14 @@ import { Teamlookup } from "../../lib/collections/averages.js"
 import { TeamPoints } from "../../lib/collections/averages.js"
 import { SortedData } from "../../lib/collections/averages.js"
 
-
 TeamData = new ReactiveVar();
+red1 = new ReactiveVar();
+red2 = new ReactiveVar();
+red3 = new ReactiveVar();
 
-redPoints = new ReactiveVar();
-bluePoints = new ReactiveVar();
+blue1 = new ReactiveVar();
+blue2 = new ReactiveVar();
+blue3 = new ReactiveVar();
 
 var mostRecentMatch = new ReactiveVar(0);
 var tbaMatch = new ReactiveVar();
@@ -101,17 +104,12 @@ Template.strategy.events({
 		$("#blue2").val(blue2.get())
 		$("#blue3").val(blue3.get())
 
-		redPoints.set(Teamlookup(red1.get()).MAP + Teamlookup(red2.get()).MAP + Teamlookup(red3.get()).MAP)
-		//console.log(redPoints);
+		red1.set('1325')
+		red2.set('1360')
+		red3.set('1241')
 
-		bluePoints.set(Teamlookup(blue1.get()).MAP + Teamlookup(blue2.get()).MAP + Teamlookup(blue3.get()).MAP)
-		//console.log(bluePoints);
-
+		console.log(SortedData()[red1.get()]);
 		
-		TeamData.set(SortedData.get())
-		console.log(TeamData.get())
-
-
 	}
 });
 
@@ -120,26 +118,34 @@ Template.strategy.helpers({
 		return MatchNumber.get();
 	},
 
+
 	MatchNumberIn: function(){
 		return MatchNumberIn.get();
 	},
 
-	redPoints: function(){
-		
-		return redPoints.get();
-
+	//-------------------------BEGIN TEAM STUFF--------------------------------
+	//RED 1
+	TeamDataRed1: function() {			
+		return SortedData()[red1.get()];		
+	},
+	TeamNumberRed1: function() {
+		return red1.get();
+	},
+	//RED 2
+	TeamDataRed2: function() {			
+		return SortedData()[red2.get()];		
+	},
+	TeamNumberRed2: function() {
+		return red2.get();
 	},
 
-	bluePoints: function(){
-		
-		return bluePoints.get();
-
+	//RED 3
+	TeamDataRed3: function() {			
+		return SortedData()[red3.get()];		
+	},
+	TeamNumberRed3: function() {
+		return red3.get();
 	},
 
-	TeamData: function() {	
-
-		return Teamlookup(blue3.get());
-		
-	},
 	
 });
