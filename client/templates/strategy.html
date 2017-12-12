@@ -43,6 +43,8 @@
 		      <div class="well">
 		        <h4>Red Team</h4>
 		        <p>Most Beneficial Auto Strategy: </p>
+		        <p>{{RedStrats.Middle}}</p>
+		        <p>{{RedStrats.Side}}</p>
 		      </div>
 		  
 		      <div class="row">
@@ -128,7 +130,7 @@
 		      <div class="row">
 		        <div class="col-sm-8">
 		          <div class="well">
-		            <p>Text</p> 
+		            <p>Notes for</p> 
 		          </div>
 		        </div>
 		        <div class="col-sm-4">
@@ -144,6 +146,85 @@
 	    </div>
 
 	    <div role="tabpanel" class="tab-pane" id="tele">
+	    <!--                                               TELE OP PANEL  FOR RED TEAMS                                          -->
+	    	<br>
+	    	 <div class="col-sm-9">
+		      <div class="well">
+		        <h4>Red Team</h4>
+		        <p>Most Beneficial Tele-Op Strategy: </p>
+		        <p>{{RedStrats.Middle}}</p>
+		        <p>{{RedStrats.Side}}</p>
+		      </div>
+		  
+		      <div class="row">
+		        <div class="col-sm-4">
+		          <div class="well red" >
+		          	<h4 style="font-weight: bold; text-align: center;">{{TeamNumberRed1}}</h4>
+		          	<!--===================================== RED 1'S BOX0 -=====================================-->
+		          	<p>Average Gears</p>
+					{{TeamDataRed1.advancedaverages.totalGearsScoredAverage}}
+
+					<p>Average Gears Dropped</p>
+					{{TeamDataRed1.advancedaverages.totalGearsDroppedAverage}}
+
+					<p>Chance to Hit 4 Gears</p>
+					{{RedStrats.teleGearsNormalCDFTeam1}}
+
+					
+
+		            
+		          </div>
+		        </div>
+
+		        <!--===================================== RED 2'S BOX0 -=====================================-->
+		         <div class="col-sm-4">
+		          <div class="well red">
+		          	<h4 style="font-weight: bold; text-align: center;">{{TeamNumberRed2}}</h4>
+		          	
+					<p>Average Gears</p>
+					{{TeamDataRed2.advancedaverages.totalGearsScoredAverage}}
+
+					<p>Average Gears Dropped</p>
+					{{TeamDataRed2.advancedaverages.totalGearsDroppedAverage}}
+
+					<p>Chance to Hit 4 Gears</p>
+					{{RedStrats.teleGearsNormalCDFTeam2}}
+		            
+		          </div>
+		        </div>
+
+		        <!--===================================== RED 3'S BOX0 -=====================================-->
+		         <div class="col-sm-4">
+		          <div class="well red">
+		          	<h4 style="font-weight: bold; text-align: center;">{{TeamNumberRed3}}</h4>
+		          	
+					<p>Average Gears</p>
+					{{TeamDataRed3.advancedaverages.totalGearsScoredAverage}}
+
+					<p>Average Gears Dropped</p>
+					{{TeamDataRed3.advancedaverages.totalGearsDroppedAverage}}
+
+					<p>Chance to Hit 4 Gears</p>
+					{{RedStrats.teleGearsNormalCDFTeam3}}
+		            
+		          </div>
+		        </div>
+
+		      </div>
+
+		      <div class="row">
+		        <div class="col-sm-8">
+		          <div class="well">
+		            <p>Notes for</p> 
+		          </div>
+		        </div>
+		        <div class="col-sm-4">
+		          <div class="well">
+		            <p>Text</p> 
+		          </div>
+		        </div>
+		       </div>
+			 </div>
 	    	
 	    </div>
 
@@ -322,12 +403,12 @@
 
 			</div>
 
-			<input id="strategySearch" class="btn btn-info" type="submit" value="Generate">
+			
 
 		   </div>
 		  <!--{{/if}}-->
 	    </div>
-
+	    <input id="strategySearch" class="btn btn-info" type="submit" value="Generate">
 	  </div>
 
 	</div>

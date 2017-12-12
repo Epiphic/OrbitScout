@@ -56,119 +56,49 @@ scout lead every 5 matches updates local data
 
 keep local data and when updating use QR code 
 
-//----------------------------------------------------MATCH POINTS FOR GRAPHS CALC---------------------------------------------------------------
-		
-		//--------------------KPA TELLEOP STATS FOR GRAPH-----------------------
 
-		//2017 KPA tele stats
-		var KPAteleGraph = 0;
-		
-		if(teleKpa == "lowKPA"){
-			KPAteleGraph += 15;
-		}
-		else if(teleKpa == "medKPA"){
-			KPAteleGraph += 25
-		}
-		else{
-			KPAteleGraph += 35
-		}
-
-
-		//--------------------KPA AUTO STATS FOR GRAPH-----------------------
-
-		//2017 KPA auto stats
-		var KPAautoGraph = 0;
-		
-		if(kpaAuto == "Yes"){
-			KPAautoGraph += 20;
-		}
-
-
-		//--------------------MIDDLE GEAR AUTO STATS FOR GRAPH-----------------------
-
-		//2017 Middle gear auto check
-		var MiddleGearGraph = 0;
-		
-		if(gearAuto == "gearMiddleWorked"){
-			MiddleGearGraph += 20;
-		}
-
-		//--------------------SIDEGEAR AUTO STATS FOR GRAPH-----------------------
-
-		//2017 Side gear auto check
-		var SideGearGraph = 0;
-		
-		if(gearAuto == "gearSideWorked"){
-			SideGearGraph += 20;
-		}
-
-
-		//--------------------BASELINE STATS FOR GRAPH-----------------------
-
-		//2017 Baseline corssed is 5 points
-		var BaselineCrossedGraph = 0;
-		
-		if(baselineCrossed == "crossYes"){
-			baselineCrossed += 5;
-		}
-
-		//--------------------AUTO MATCH GRAPH-----------------------
-
-		//Assuming a gear in auto is worth X amount of points
-		//Assuming a good auto KPA is worth X amount of points
-		var AutoPoints = 0;
-		
-		if(gearAuto == "gearMiddleWorked" || gearAuto == "gearSideWorked"){
-			AutoPoints += 40;
-		}
-		else if (kpaAuto == "Yes"){
-			AutoPoints += 20;
-		}
-		else if (baselineCrossed == "crossYes"){
-			AutoPoints += 5;
-		}
-
-		//--------------------TELE MATCH GRAPH---------------------
-
-		//Assuming a gear in Tele is worth X amount of points
-		var TelePoints = 0;
-		
-		TelePoints += teleGear*20;
-
-		if (teleKpa == "medKPA"){
-			TelePoints += 15;
-		}
-		else if (teleKpa == "highKPA"){
-			TelePoints += 30;
-		}
-
-		//--------------------ENDGAME MATCH GRAPH---------------------
-
-		//Assuming a gear in Tele is worth X amount of points
-		var GraphClimb = 0;
-		
-
-		if(teleClimb == "Yes"){
-			GraphClimb += 50;
-		}
-
-		//--------------------PRESTO MATCH GRAPH---------------------
-
-		//Assuming a gear in Tele is worth X amount of points
-		var PrestoGraph = 0;
-		
-
-		if(presto == "PrestoGear" || "PrestoFuel"){
-			if(presto == "PrestoBoth"){
-				PrestoGraph += 50;
-
-			}	
-
-			else{
-				PrestoGraph += 20;
-			}		
-		}
-		
 
 
 \if auto and teleop tasks are independent al la 2016, 2013 and 2012 idd just go with whatever gives max score
+
+
+
+
+Max Boord [10:21 AM] 
+Idk what your system alows but essentially you want a z test
+
+
+[10:22] 
+You want to do a z test on a per robot basis for each catagory
+
+
+[10:23] 
+And for each point in that catagory you want to know the % chance of a robot completing the task
+
+
+[10:24] 
+Then you can make something to itterate through posibilities of each and find the minimum value of all the corrisponding z values for each possible combination.
+
+
+[10:27] 
+For instance, if im trying to 3 rotor and no one has autonomous, I need to do 6 gears. So logically I try to have each robot do 2 gears. The z test scores are .01, .05 and .89. Subtracted from 1 you get .99, .95 and .11. Then taking the minimum of those u get .11, or an 11% chance of strategic success with that combination.
+
+
+[10:30] 
+A better way to go would be to try to have a 3,2,1 combination.  The z scores might look like are .03, .05 and .50. Subtracted from 1 you get .97, .95 and .50. Then taking the minimum of those u get .50, or a 50% chance of strategic success with that combination. Idd much rather run that than the 1st option. You can then use subsiquent tests for climb times and such to determine if at the completion of each teams required gear cycling they go to climb or play climb deffense or some other action.
+
+
+[10:34] 
+Also worth noting I have no fucking clue what your system is capable of with reguards to inputs.
+
+
+[10:35] 
+Im doing some sort of fudge factor for the inverse percentage of number of matches completed so that the less data I have the less certain the predictions will say they are.
+
+
+[10:36] 
+Also im considering doing logrithmic or exponential scaling on the data to make more recent data increase in pertinence to the calculations.
+
+
+[10:37] 
+@brian62 @dirtbikerxz does any of this make the slightest bit of logical sense.

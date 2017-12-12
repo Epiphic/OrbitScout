@@ -114,8 +114,8 @@ Template.strategy.events({
 		blue2.set('1360')
 		blue3.set('1241')
 
-		console.log(SortedData())
-		console.log(SortedData()[red1.get()]);
+		//console.log(SortedData())
+		//console.log(SortedData()[red1.get()]);
 
 		console.log(AdvancedStats(red1.get(),red2.get(),red3.get()));
 
@@ -180,6 +180,15 @@ Template.strategy.helpers({
 	},
 	TeamNumberblue3: function() {
 		return blue3.get();
+	},
+
+	//STRATS FOR RED AND BLUE TEAMS
+	RedStrats: function() {
+		return AdvancedStats(red1.get(),red2.get(),red3.get());
+	},
+
+	BlueStrats: function() {
+		return AdvancedStats(blue1.get(), blue2.get(), blue3.get());
 	},
 
 	
