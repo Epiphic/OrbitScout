@@ -105,6 +105,7 @@ Template.matchDataInsert.events({
 
 		//Qualititative Data
 		var qualitative = '"' + $('.qualitativeData').val() + '"';
+		var defense = $('input[name=defense]:checked').val();
 
 		
 		if( ((isBad(numb)) ||
@@ -119,6 +120,7 @@ Template.matchDataInsert.events({
             (isBad(teleClimb)) ||
             (isBad(teleDied)) ||
             (isBad(teleKpa)) ||
+            (isBad(defense)) ||
             (isBad(presto))) ) {
    			 // One field is empty somewhere
    			 alert("FILL THE WHOLE FORM");
@@ -152,6 +154,7 @@ Template.matchDataInsert.events({
 			teleClimb: teleClimb,
 			teleDied:teleDied,
 			presto: presto,
+			defense: defense,
 			qualitative: qualitative,
 			
 		}
