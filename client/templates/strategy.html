@@ -161,24 +161,26 @@
 		          <div class="well red" >
 		          	<h4 style="font-weight: bold; text-align: center;">{{TeamNumberRed1}}</h4>
 		          	<!--===================================== RED 1'S BOX0 -=====================================-->
-		          	<p>Average Gears</p>
-					{{TeamDataRed1.advancedaverages.totalGearsScoredAverage}}
+		          	
+		          	<div class="blop">
+		          		<p>Average Gears</p>		          		
+		          		{{TeamDataRed1.advancedaverages.totalGearsScoredAverage}}
 
-					<p>Average Gears Dropped</p>
-					{{TeamDataRed1.advancedaverages.totalGearsDroppedAverage}}
+		          		<p>Average Gears Dropped</p>
+						{{TeamDataRed1.advancedaverages.totalGearsDroppedAverage}}
 
-					<p>Chance to Hit 4 Gears</p>
-					{{RedStrats.teleGearsNormalCDFTeam1}}
 
-					<p>Defense rating</p>
-					{{TeamDataRed1.advancedaverages.totaldefenseRating}}
+						<p>Chance to Hit 4 Gears</p>
+						{{RedStrats.teleGearsNormalCDFTeam1}}
 
-					<p>Notes on {{TeamNumberRed1}}</p>
-					{{TeamDataRed1.averages.qualitative}}
+						<p>Defense rating</p>
+						{{TeamDataRed1.advancedaverages.totaldefenseRating}}
 
-					
+						<p>Notes on {{TeamNumberRed1}}</p>
+						{{TeamDataRed1.averages.qualitative}}
 
-		            
+		          	</div>
+						            
 		          </div>
 		        </div>
 
@@ -186,23 +188,25 @@
 		         <div class="col-sm-4">
 		          <div class="well red">
 		          	<h4 style="font-weight: bold; text-align: center;">{{TeamNumberRed2}}</h4>
-		          	
-					<p>Average Gears</p>
-					{{TeamDataRed2.advancedaverages.totalGearsScoredAverage}}
 
-					<p>Average Gears Dropped</p>
-					{{TeamDataRed2.advancedaverages.totalGearsDroppedAverage}}
+		          	<div class="blop">
+		          		<p>Average Gears</p>
+						{{TeamDataRed2.advancedaverages.totalGearsScoredAverage}}
 
-					<p>Chance to Hit 4 Gears</p>
-					{{RedStrats.teleGearsNormalCDFTeam2}}
+						<p>Average Gears Dropped</p>
+						{{TeamDataRed2.advancedaverages.totalGearsDroppedAverage}}
 
-					<p>Defense rating</p>
-					{{TeamDataRed2.advancedaverages.totaldefenseRating}}
+						<p>Chance to Hit 4 Gears</p>
+						{{RedStrats.teleGearsNormalCDFTeam2}}
 
-					<p>Notes on {{TeamNumberRed2}}</p>
-					{{TeamDataRed2.averages.qualitative}}
+						<p>Defense rating</p>
+						{{TeamDataRed2.advancedaverages.totaldefenseRating}}
 
-		            
+						<p>Notes on {{TeamNumberRed2}}</p>
+						{{TeamDataRed2.averages.qualitative}}
+
+		          	</div>
+		          		            
 		          </div>
 		        </div>
 
@@ -211,22 +215,23 @@
 		          <div class="well red">
 		          	<h4 style="font-weight: bold; text-align: center;">{{TeamNumberRed3}}</h4>
 		          	
-					<p>Average Gears</p>
-					{{TeamDataRed3.advancedaverages.totalGearsScoredAverage}}
+		          	<div class="blop">
+		          		<p>Average Gears</p>
+						{{TeamDataRed3.advancedaverages.totalGearsScoredAverage}}
 
-					<p>Average Gears Dropped</p>
-					{{TeamDataRed3.advancedaverages.totalGearsDroppedAverage}}
+						<p>Average Gears Dropped</p>
+						{{TeamDataRed3.advancedaverages.totalGearsDroppedAverage}}
 
-					<p>Chance to Hit 4 Gears</p>
-					{{RedStrats.teleGearsNormalCDFTeam3}}
+						<p>Chance to Hit 4 Gears</p>
+						{{RedStrats.teleGearsNormalCDFTeam3}}
 
-					<p>Defense rating</p>
-					{{TeamDataRed3.advancedaverages.totaldefenseRating}}
+						<p>Defense rating</p>
+						{{TeamDataRed3.advancedaverages.totaldefenseRating}}
 
-					<p>Notes on {{TeamNumberRed3}}</p>
-					{{TeamDataRed3.averages.qualitative}}
-
-		            
+						<p>Notes on {{TeamNumberRed3}}</p>
+						{{TeamDataRed3.averages.qualitative}}
+		          	</div>
+						            
 		          </div>
 		        </div>
 
@@ -234,10 +239,19 @@
 
 		      <div class="row">
 		        <div class="col-sm-8">
+
 		          <div class="well">
-		            <p>Notes for</p> 
+		            <p>4 Rotor</p> 
+		            {{myStratChart}}
+
 		          </div>
+
 		        </div>
+
+
+
+
+
 		        <div class="col-sm-4">
 		          <div class="well">
 		            <p>Text</p> 

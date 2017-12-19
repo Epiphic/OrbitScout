@@ -2,6 +2,7 @@ import { Teamlookup } from "../../lib/collections/averages.js"
 import { TeamPoints } from "../../lib/collections/averages.js"
 import { SortedData } from "../../lib/collections/averages.js"
 import { AdvancedStats } from "../../lib/collections/averages.js"
+import { StratGraph } from "../../lib/collections/averages.js"
 
 
 TeamData = new ReactiveVar();
@@ -117,7 +118,11 @@ Template.strategy.events({
 		//console.log(SortedData())
 		//console.log(SortedData()[red1.get()]);
 
-		console.log(AdvancedStats(red1.get(),red2.get(),red3.get()));
+		//console.log(AdvancedStats(red1.get(),red2.get(),red3.get()));
+
+		console.log(StratGraph('1241'))
+
+	
 
 
 		
@@ -191,5 +196,43 @@ Template.strategy.helpers({
 		return AdvancedStats(blue1.get(), blue2.get(), blue3.get());
 	},
 
+
+
+
+	//===========================CREATE THE GRAPH=====================================================================
+	myStratChart: function() {
+
+		console.log('TRIEDD')
+        
+        return {
+
+        	axis: {
+        		y: {
+        			
+			            //max: 400,
+			            //min: 0,
+			            // Range includes padding, set 0 if no padding needed
+			            padding: {top:0, bottom:0}
+			        
+				   
+				  },
+
+        		rotated: false,
+			
+
+				},
+
+            data: {
+            	order: null,
+                columns: [1,2,3],
+                type: 'line',
+                groups: [
+                       ['Chance']
+                        ]
+                    },  
+           
+             
+                };
+            },
 	
 });
