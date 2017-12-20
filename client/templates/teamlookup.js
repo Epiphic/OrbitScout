@@ -1,4 +1,4 @@
-import { Teamlookup } from "../../lib/collections/averages.js"
+import { SortedData } from "../../lib/collections/averages.js"
 import { TeamGraph } from "../../lib/collections/averages.js"
 
 var lookup = new ReactiveVar("");
@@ -9,6 +9,8 @@ Template.teamlookup.events({
 	'click #lookupTeam': function () {
 		
 		lookup.set($('.teamLookup').val());
+
+		console.log(SortedData()[lookup.get()])
         
         //console.log(Dutti.get())
 
@@ -61,7 +63,7 @@ Template.teamlookup.helpers({
 	Teamlookup: function() {
 		
 
-		return Teamlookup(lookup.get());
+		return SortedData()[lookup.get()];
 		
 	},
 

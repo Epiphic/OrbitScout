@@ -32,21 +32,43 @@
 
 						<tr>
 						    <td>Middle Gear Stats:</td>
-						    <td>{{Teamlookup.AutoMiddleGear}}</td> 
+						    <td>
+								<div class="progress">
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.totalMiddleGearAverage}}%; color: silver;">
+								    {{Teamlookup.advancedaverages.totalMiddleGearAverage}}%
+								  </div>
+								</div>
+						    </td> 
+
+
 						    <td>Gear Missed Average: </td>
-						    <td>{{Teamlookup.gearMissedAverage}}</td>
+						    <td>{{Teamlookup.advancedaverages.totalGearsDroppedAverage}}</td>
 						</tr>
 
 						<tr>
 						    <td>Side Gear Stats:</td>
-						    <td>{{Teamlookup.AutoSideGear}}</td> 
+						    <td>
+								<div class="progress">
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.totalSideGearAverage}}%; color: silver;">
+								    {{Teamlookup.advancedaverages.totalSideGearAverage}}%
+								  </div>
+								</div>
+						    </td> 
+
+
 						    <td>Gear Average:</td>
-						    <td>{{Teamlookup.gearAverage}}</td>
+						    <td>{{Teamlookup.advancedaverages.totalGearsScoredAverage}}</td>
 						</tr>
 
 						<tr>
 						    <td>Crossed Baseline Stats:</td>
-						    <td>{{Teamlookup.AutoBase}}</td> 
+						    <td>
+						    	<div class="progress">
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.ChancetoHit_Baseline}}%; color: silver;">
+								    {{Teamlookup.advancedaverages.ChancetoHit_Baseline}}%
+								  </div>
+								</div>
+						    </td> 
 						    <td>Shooting Stats:</td>
 						    <td>{{Teamlookup.teleKPA}}</td>
 						</tr>

@@ -4,6 +4,7 @@ import { SortedData } from "../../lib/collections/averages.js"
 import { AdvancedStats } from "../../lib/collections/averages.js"
 import { StratGraph } from "../../lib/collections/averages.js"
 
+ChartData = new ReactiveVar();
 
 TeamData = new ReactiveVar();
 red1 = new ReactiveVar();
@@ -108,20 +109,21 @@ Template.strategy.events({
 		$("#blue3").val(blue3.get())
 
 		red1.set('1325')
-		red2.set('1360')
-		red3.set('1241')
+		red2.set('1325')
+		red3.set('1325')
 
-		blue1.set('1325')
+		blue1.set('1360')
 		blue2.set('1360')
-		blue3.set('1241')
+		blue3.set('1360')
 
 		//console.log(SortedData())
 		//console.log(SortedData()[red1.get()]);
 
 		//console.log(AdvancedStats(red1.get(),red2.get(),red3.get()));
 
-		console.log(StratGraph('1241'))
-
+		console.log(StratGraph('1241','1360','1360','1360','1360','1360')[0])
+		ChartData.set(StratGraph(red1.get(),red2.get(),red3.get(),blue1.get(),blue2.get(),blue3.get()))
+		console.log(ChartData.get())
 	
 
 
@@ -130,7 +132,41 @@ Template.strategy.events({
 });
 
 Template.strategy.helpers({
+	//===========================CREATE THE GRAPH=====================================================================
+	"myChartData": function() {
+		console.log("Helper RUnning......")
+		return {
+
+			axis: {
+				y: {
+			        label: 'Chance to Happen'
+			        },
+
+
+				x: {
+					label: 'Gears by Alliance',
+				  	type: 'category',
+				   
+				    tick: {
+				  	  
+				  	  multiline: false
+				    }
+				  }
+				},
+
+			data: {
+				columns: [ChartData.get()[0],ChartData.get()[1]],
+				type: 'spline',
+				colors: {
+		            red: '#ff0000',
+		            blue: '#0000ff'		           
+		        },
+			}
+		};
+	},
+
 	MatchNumber: function(){
+
 		return MatchNumber.get();
 	},
 
@@ -199,40 +235,7 @@ Template.strategy.helpers({
 
 
 
-	//===========================CREATE THE GRAPH=====================================================================
-	myStratChart: function() {
-
-		console.log('TRIEDD')
-        
-        return {
-
-        	axis: {
-        		y: {
-        			
-			            //max: 400,
-			            //min: 0,
-			            // Range includes padding, set 0 if no padding needed
-			            padding: {top:0, bottom:0}
-			        
-				   
-				  },
-
-        		rotated: false,
-			
-
-				},
-
-            data: {
-            	order: null,
-                columns: [1,2,3],
-                type: 'line',
-                groups: [
-                       ['Chance']
-                        ]
-                    },  
-           
-             
-                };
-            },
+	
 	
 });
+//StratGraph(red1.get(),red2.get(),red3.get(),blue1.get(),blue2.get(),blue3.get())

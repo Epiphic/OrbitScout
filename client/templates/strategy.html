@@ -39,7 +39,7 @@
 	    <div role="tabpanel" class="tab-pane active" id="auto">
 	    	<!--                                               AUTO PANEL  FOR RED TEAMS                                          -->
 	    	<br>
-	    	 <div class="col-sm-9">
+	    	 <div class="col-sm-12">
 		      <div class="well">
 		        <h4>Red Team</h4>
 		        <p>Most Beneficial Auto Strategy: </p>
@@ -148,7 +148,7 @@
 	    <div role="tabpanel" class="tab-pane" id="tele">
 	    <!--                                               TELE OP PANEL  FOR RED TEAMS                                          -->
 	    	<br>
-	    	 <div class="col-sm-9">
+	    	 <div class="col-sm-12">
 		      <div class="well">
 		        <h4>Red Team</h4>
 		        <p>Most Beneficial Tele-Op Strategy: </p>
@@ -238,25 +238,16 @@
 		      </div>
 
 		      <div class="row">
-		        <div class="col-sm-8">
+		        <div class="col-sm-12">
 
 		          <div class="well">
 		            <p>4 Rotor</p> 
-		            {{myStratChart}}
+		            {{> c3 myChartData}}
 
 		          </div>
 
 		        </div>
-
-
-
-
-
-		        <div class="col-sm-4">
-		          <div class="well">
-		            <p>Text</p> 
-		          </div>
-		        </div>
+	        
 		       </div>
 			 </div>
 	    	
@@ -446,5 +437,7 @@
 	  </div>
 
 	</div>
+
+	
 </template>
 
