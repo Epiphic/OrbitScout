@@ -1,5 +1,6 @@
 import { SortedData } from "../../lib/collections/averages.js"
 import { TeamGraph } from "../../lib/collections/averages.js"
+import { AdvancedStats } from "../../lib/collections/averages.js"
 
 var lookup = new ReactiveVar("");
 var TeamPicture = new ReactiveVar("");

@@ -121,10 +121,10 @@ Template.strategy.events({
 
 		//console.log(AdvancedStats(red1.get(),red2.get(),red3.get()));
 
-		console.log(StratGraph('1241','1360','1360','1360','1360','1360')[0])
-		ChartData.set(StratGraph(red1.get(),red2.get(),red3.get(),blue1.get(),blue2.get(),blue3.get()))
-		console.log(ChartData.get())
-	
+		//console.log(AdvancedStats(red1.get(),red2.get(),red3.get()))
+
+
+		
 
 
 		
@@ -132,14 +132,19 @@ Template.strategy.events({
 });
 
 Template.strategy.helpers({
+	
 	//===========================CREATE THE GRAPH=====================================================================
-	"myChartData": function() {
+	"myChart": function() {
 		console.log("Helper RUnning......")
+		
 		return {
 
 			axis: {
 				y: {
-			        label: 'Chance to Happen'
+			        label: 'Chance to Happen',
+			        
+			        // Range includes padding, set 0 if no padding needed
+			        
 			        },
 
 
@@ -147,15 +152,13 @@ Template.strategy.helpers({
 					label: 'Gears by Alliance',
 				  	type: 'category',
 				   
-				    tick: {
-				  	  
-				  	  multiline: false
-				    }
+				    
 				  }
 				},
 
 			data: {
-				columns: [ChartData.get()[0],ChartData.get()[1]],
+				order: null,
+				columns: StratGraph(red1.get(),red2.get(),red3.get(),blue1.get(),blue2.get(),blue3.get()),
 				type: 'spline',
 				colors: {
 		            red: '#ff0000',
