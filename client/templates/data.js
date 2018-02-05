@@ -250,7 +250,7 @@ Template.matchDataInsert.events({
            	(isBad(allianceS)) ||
             (isBad(scouter)) ||
             (isBad(baselineCrossed)) ||
-           // (isBad(Cund)) ||
+           // (isBad(switchFound)) ||
             //(isBad(autoSwitchCube)) ||
            // (isBad(scaleFound)) ||
            // (isBad(autoScaleCube)) ||
