@@ -25,7 +25,7 @@
       <input type="text" class="newScouter" placeholder="Scouter Ex. Brian M">
 
     </div>
-
+ 
       
     <!-- AUTO VALUES BEGIN-->
     <div class="page-header">
@@ -107,6 +107,15 @@
       <input type="radio" id="TeleRadio3-2" name="climb" value="climbNo"><label for="TeleRadio3-2">No</label>
       <input type="radio" id="TeleRadio3-3" name="climb" value="climbPlusOne"><label for="TeleRadio3-3">Climbed + 1</label>
       <input type="radio" id="TeleRadio3-4" name="climb" value="ClimbPlusTwo"><label for="TeleRadio3-4">Climbed + 2</label><br>
+      
+      {{#if climbUnlock}}
+          <br>
+          <p>How long did their climb take?</p>
+          <input type="radio" id="TeleRadio5-1" name="climbSpeed" value="climbFast"><label for="TeleRadio5-1">0-10 seconds</label>
+          <input type="radio" id="TeleRadio5-2" name="climbSpeed" value="climbMedium"><label for="TeleRadio5-2">10-20 seconds</label>
+          <input type="radio" id="TeleRadio5-3" name="climbSpeed" value="climbSlow"><label for="TeleRadio5-3">20-30 seconds</label>
+          <input type="radio" id="TeleRadio5-4" name="climbSpeed" value="climbVerySlow"><label for="TeleRadio5-4">30+ seconds</label><br>
+       {{/if}}
 
        <br>
       <p>Did they struggle placing cubes?</p>
@@ -115,12 +124,7 @@
       <input type="radio" id="TeleRadio4-3" name="struggle" value="struggleYesBoth"><label for="TeleRadio4-3">Yes, in both</label>
       <input type="radio" id="TeleRadio4-4" name="struggle" value="struggleNo"><label for="TeleRadio4-4">No</label><br>
 
-      <br>
-      <p>How long did their climb take?</p>
-      <input type="radio" id="TeleRadio5-1" name="climbSpeed" value="climbFast"><label for="TeleRadio5-1">0-10 seconds</label>
-      <input type="radio" id="TeleRadio5-2" name="climbSpeed" value="climbMedium"><label for="TeleRadio5-2">10-20 seconds</label>
-      <input type="radio" id="TeleRadio5-3" name="climbSpeed" value="climbSlow"><label for="TeleRadio5-3">20-30 seconds</label>
-      <input type="radio" id="TeleRadio5-4" name="climbSpeed" value="climbVerySlow"><label for="TeleRadio5-4">30+ seconds</label><br>
+     
 
       <br>
       <p>Did they die during their match?</p>
@@ -140,20 +144,20 @@
      
       <br>
       <p>How good was their defense?</p>
-      <input type="radio" id="TeleRadio5-1" name="defense" value="defense1"><label for="TeleRadio5-1">1</label>
-      <input type="radio" id="TeleRadio5-2" name="defense" value="defense2"><label for="TeleRadio5-2">2</label>
-      <input type="radio" id="TeleRadio5-3" name="defense" value="defense3"><label for="TeleRadio5-3">3</label>
-      <input type="radio" id="TeleRadio5-4" name="defense" value="defense4"><label for="TeleRadio5-4">4</label>
-      <input type="radio" id="TeleRadio5-5" name="defense" value="defense5"><label for="TeleRadio5-5">5</label>
-      <input type="radio" id="TeleRadio5-6" name="defense" value="defense6"><label for="TeleRadio5-6">No Defense</label><br>
+      <input type="radio" id="TeleRadio7-1" name="defense" value="defense1"><label for="TeleRadio7-1">1</label>
+      <input type="radio" id="TeleRadio7-2" name="defense" value="defense2"><label for="TeleRadio7-2">2</label>
+      <input type="radio" id="TeleRadio7-3" name="defense" value="defense3"><label for="TeleRadio7-3">3</label>
+      <input type="radio" id="TeleRadio7-4" name="defense" value="defense4"><label for="TeleRadio7-4">4</label>
+      <input type="radio" id="TeleRadio7-5" name="defense" value="defense5"><label for="TeleRadio7-5">5</label>
+      <input type="radio" id="TeleRadio7-6" name="defense" value="defense6"><label for="TeleRadio7-6">No Defense</label><br>
 
       <br>
       <p>How good was their evasion / driving?</p>
-      <input type="radio" id="TeleRadio5-1" name="defense" value="defense1"><label for="TeleRadio5-1">1</label>
-      <input type="radio" id="TeleRadio5-2" name="defense" value="defense2"><label for="TeleRadio5-2">2</label>
-      <input type="radio" id="TeleRadio5-3" name="defense" value="defense3"><label for="TeleRadio5-3">3</label>
-      <input type="radio" id="TeleRadio5-4" name="defense" value="defense4"><label for="TeleRadio5-4">4</label>
-      <input type="radio" id="TeleRadio5-5" name="defense" value="defense5"><label for="TeleRadio5-5">5</label><br>
+      <input type="radio" id="TeleRadio8-1" name="evasion" value="defense1"><label for="TeleRadio8-1">1</label>
+      <input type="radio" id="TeleRadio8-2" name="evasion" value="defense2"><label for="TeleRadio8-2">2</label>
+      <input type="radio" id="TeleRadio8-3" name="evasion" value="defense3"><label for="TeleRadio8-3">3</label>
+      <input type="radio" id="TeleRadio8-4" name="evasion" value="defense4"><label for="TeleRadio8-4">4</label>
+      <input type="radio" id="TeleRadio8-5" name="evasion" value="defense5"><label for="TeleRadio8-5">5</label><br>
 
       
     </div>

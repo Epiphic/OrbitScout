@@ -4,6 +4,7 @@ import { SortedData } from "../../lib/collections/averages.js"
 
 var currentSearch = new ReactiveVar("");
 
+//Auto stuff
 var switchScored = new ReactiveVar(0);
 var switchAttempted = new ReactiveVar(0);
 
@@ -15,6 +16,10 @@ var vaultScored = new ReactiveVar(0);
 var baselineUnlock = new ReactiveVar("");
 var switchUnlock = new ReactiveVar("");
 var scaleUnlock = new ReactiveVar("");
+
+//Teleop Stuff
+var climbUnlock = new ReactiveVar("");
+
 
 function isBad(val) {
     //console.log(val);
@@ -148,6 +153,21 @@ Template.matchDataInsert.events({
 	},
 
 
+	//TELEOP UNLOCKS
+	'click #TeleRadio3-1': function (e) {
+		climbUnlock.set(true);	
+	},
+	'click #TeleRadio3-3': function (e) {
+		climbUnlock.set(true);	
+	},
+	'click #TeleRadio3-4': function (e) {
+		climbUnlock.set(true);	
+	},
+	'click #TeleRadio3-2': function (e) {
+		climbUnlock.set(false);	
+	},
+
+
 
 
 
@@ -180,6 +200,7 @@ Template.matchDataInsert.events({
 			}			
 			else{
 				var switchFound = false;
+				var autoSwitchCube = "Locked"
 			}
 
 			if(switchUnlock.get()){
@@ -187,40 +208,65 @@ Template.matchDataInsert.events({
 				var autoScaleCube = $('input[name=autoScaleCube]:checked').val();
 			}
 			else{
-				switchFound = false;
+				var switchFound = false;
+				var autoScaleCube = "Locked"
 			}
 		}
 		else{
-			baselineCrossed = false;
+			var baselineCrossed = false;
+
 		}
 				
 		//Tele-op Values
-		var teleAttemptedGear = GearsAttempted.get();
-		var teleGear = Gears.get();
-		var teleKpa = $('input[name=radioKPA]:checked').val();
-		var teleClimb = $('input[name=climb]:checked').val();
+		var teleSwtichScored = switchScored.get();
+		var teleSwtichAttempted = switchAttempted.get();
+		var teleScaleScored = scaleScored.get();
+		var teleScaleAttempted = scaleAttempted.get();
+		var teleVaultScored = vaultScored.get();
+
+		var teleSwitchSpeed = $('input[name=switchSpeed]:checked').val();
+		var teleScaleSpeed = $('input[name=scaleSpeed]:checked').val();
+		var teleStruggle = $('input[name=struggle]:checked').val();
 		var teleDied = $('input[name=matchDied]:checked').val();
-		var presto = $('input[name=Presto]:checked').val();
+
+		if(climbUnlock.get()){
+			console.log("Climb Unlocked");
+			var teleClimb = true;
+			var teleClimbSpeed = $('input[name=climbSpeed]:checked').val();
+		}
+		else{
+			var teleClimb
+			var teleClimbSpeed = "Locked"
+		}
 
 		//Qualititative Data
 		var qualitative = '"' + $('.qualitativeData').val() + '"';
 		var defense = $('input[name=defense]:checked').val();
+		var evasion = $('input[name=evasion]:checked').val();
 
 		
 		if( ((isBad(numb)) ||
             (isBad(team)) ||
            	(isBad(allianceS)) ||
             (isBad(scouter)) ||
-            (isBad(gearAuto)) ||
-            (isBad(kpaAuto)) ||
             (isBad(baselineCrossed)) ||
-            (isBad(teleAttemptedGear)) ||
-            (isBad(teleGear)) ||
-            (isBad(teleClimb)) ||
+           // (isBad(switchFound)) ||
+            //(isBad(autoSwitchCube)) ||
+           // (isBad(scaleFound)) ||
+           // (isBad(autoScaleCube)) ||
+            (isBad(teleSwtichScored)) ||
+            (isBad(teleSwtichAttempted)) ||
+            (isBad(teleScaleScored)) ||
+            (isBad(teleSwitchSpeed)) ||
+            (isBad(teleScaleSpeed)) ||
+            (isBad(teleStruggle)) ||
             (isBad(teleDied)) ||
-            (isBad(teleKpa)) ||
+            (isBad(teleClimb)) ||
+            (isBad(teleClimbSpeed)) ||
+            (isBad(teleScaleAttempted)) ||
             (isBad(defense)) ||
-            (isBad(presto))) ) {
+            (isBad(evasion)) ||
+            (isBad(teleVaultScored))) ) {
    			 // One field is empty somewhere
    			 alert("FILL THE WHOLE FORM");
 
@@ -242,19 +288,27 @@ Template.matchDataInsert.events({
 			scouter:scouter, 
 
 			//Auto Info
-			gearAuto:gearAuto,
-			kpaAuto:kpaAuto,
+			switchFound:switchFound,
+			autoSwitchCube:autoSwitchCube,
 			baselineCrossed:baselineCrossed,
+			scaleFound:scaleFound,
+			autoScaleCube:autoScaleCube,
 
 			//Tele-op Info
-			teleAttemptedGear:teleAttemptedGear,
-			teleGear:teleGear,
-			teleKpa:teleKpa,
-			teleClimb: teleClimb,
+			teleSwtichScored:teleSwtichScored,
+			teleSwtichAttempted:teleSwtichAttempted,
+			teleScaleScored:teleScaleScored,
+			teleSwitchSpeed:teleSwitchSpeed,
+			teleScaleSpeed:teleScaleSpeed,
+			teleStruggle:teleStruggle,
 			teleDied:teleDied,
-			presto: presto,
-			defense: defense,
-			qualitative: qualitative,
+			teleClimb:teleClimb,
+			teleClimbSpeed:teleClimbSpeed,
+			teleScaleAttempted:teleScaleAttempted,
+			defense:defense,
+			evasion:evasion,
+			teleVaultScored:teleVaultScored,
+			qualitative:qualitative
 			
 		}
 
@@ -271,24 +325,16 @@ Template.matchDataInsert.events({
 				console.log("sent to dups")
 				DuplicateMatches.insert(matchData);
 				Duplicate = true;
-				break;
-							
+				break;							
 			}
-
 		}
 		
 		if(Duplicate == false){
 			console.log("send to nromal")
-			Data.insert(matchData);
-			
-					
-			
+			Data.insert(matchData);			
 			}
-		
 		}
-
 		//e.target.text.reset();
-			
 	}
 });
 
@@ -363,6 +409,18 @@ Template.matchDataInsert.helpers({
 
 	scaleUnlock: function() {
 		if(scaleUnlock.get()) {
+			console.log("working")
+			return true;
+		}
+
+		else {
+			console.log("not wotkng")
+			return false;
+		}
+	},
+
+	climbUnlock: function() {
+		if(climbUnlock.get()) {
 			console.log("working")
 			return true;
 		}
