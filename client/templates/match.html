@@ -163,16 +163,27 @@
             <input type="radioM" id="TeleRadio2-4" name="scaleSpeed" value="scaleVerySlow"><label for="TeleRadio2-4">30+ seconds</label><br>
         </radiogroupM>
       </center>
-     
 
       <br>
-      <p>Can they climb?</p>
-      <input type="radioYN" id="TeleRadio3-1" name="climb" value="climbYes"><label for="TeleRadio3-1">Yes</label>
-      <input type="radioYN" id="TeleRadio3-2" name="climb" value="climbNo"><label for="TeleRadio3-2">No</label>
-      <input type="radioYN" id="TeleRadio3-3" name="climb" value="climbPlusOne"><label for="TeleRadio3-3">Climbed + 1</label>
-      <input type="radioYN" id="TeleRadio3-4" name="climb" value="ClimbPlusTwo"><label for="TeleRadio3-4">Climbed + 2</label><br>
+      <p>Endgame?</p>
+      <input type="radioYN" id="TeleRadio9-1" name="endgame" value="parkNo"><label for="TeleRadio9-1">Not Parked</label>
+      <input type="radioYN" id="TeleRadio9-2" name="endgame" value="parkYes"><label for="TeleRadio9-2">Parked</label>
+      <input type="radioYN" id="TeleRadio9-3" name="endgame" value="Climbed"><label for="TeleRadio9-3">Climb</label>
+      
+     
       
       {{#if climbUnlock}}
+          <br>
+          <p>Type of climb?</p>
+          <input type="radioYN" id="TeleRadio3-1" name="climbType" value="climbOtherTeam"><label for="TeleRadio3-1">Scaled by Other Team</label>
+          <input type="radioYN" id="TeleRadio3-2" name="climbType" value="climbOne"><label for="TeleRadio3-2">Scaled 1 Bot</label>
+          <input type="radioYN" id="TeleRadio3-3" name="climbType" value="climbTwo"><label for="TeleRadio3-3">Scaled 2 Bots</label>
+          <input type="radioYN" id="TeleRadio3-4" name="climbType" value="climbThree"><label for="TeleRadio3-4">Scaled 3 Bots</label>
+
+          <p>Did it work?</p>
+          <input type="radioYN" id="TeleRadio10-1" name="climbWork" value="climbYes"><label for="TeleRadio10-1">Yes</label>
+          <input type="radioYN" id="TeleRadio10-2" name="climbWork" value="climbNo"><label for="TeleRadio10-2">No</label>
+                    
           <br>
           <p>How long did their climb take?</p>
           <center>

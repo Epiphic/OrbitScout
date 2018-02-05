@@ -154,18 +154,16 @@ Template.matchDataInsert.events({
 
 
 	//TELEOP UNLOCKS
-	'click #TeleRadio3-1': function (e) {
-		climbUnlock.set(true);	
-	},
-	'click #TeleRadio3-3': function (e) {
-		climbUnlock.set(true);	
-	},
-	'click #TeleRadio3-4': function (e) {
-		climbUnlock.set(true);	
-	},
-	'click #TeleRadio3-2': function (e) {
+	'click #TeleRadio9-1': function (e) {
 		climbUnlock.set(false);	
 	},
+	'click #TeleRadio9-2': function (e) {
+		climbUnlock.set(false);	
+	},
+	'click #TeleRadio9-3': function (e) {
+		climbUnlock.set(true);	
+	},
+	
 
 
 
@@ -231,12 +229,19 @@ Template.matchDataInsert.events({
 
 		if(climbUnlock.get()){
 			console.log("Climb Unlocked");
-			var teleClimb = true;
+			var climbType = $('input[name=climbType]:checked').val();			
 			var teleClimbSpeed = $('input[name=climbSpeed]:checked').val();
+
+			if($('input[name=climbWork]:checked').val() == "climbYes"){
+				var teleClimb = true;
+			}
+			else{
+				var teleClimb = false;
+			}
 		}
 		else{
-			var teleClimb
-			var teleClimbSpeed = "Locked"
+			var teleClimb = false;
+			var teleClimbSpeed = "Locked";
 		}
 
 		//Qualititative Data
@@ -250,10 +255,10 @@ Template.matchDataInsert.events({
            	(isBad(allianceS)) ||
             (isBad(scouter)) ||
             (isBad(baselineCrossed)) ||
-           // (isBad(switchFound)) ||
-            //(isBad(autoSwitchCube)) ||
-           // (isBad(scaleFound)) ||
-           // (isBad(autoScaleCube)) ||
+            (isBad(switchFound)) ||
+            (isBad(autoSwitchCube)) ||
+            (isBad(scaleFound)) ||
+            (isBad(autoScaleCube)) ||
             (isBad(teleSwtichScored)) ||
             (isBad(teleSwtichAttempted)) ||
             (isBad(teleScaleScored)) ||
