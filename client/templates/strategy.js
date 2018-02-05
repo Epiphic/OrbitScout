@@ -24,7 +24,7 @@ MatchNumberIn = new ReactiveVar();
 Template.strategy.events({
 	'click #strategySearch': function () {
 
-		HTTP.call('GET', 'https://www.thebluealliance.com/api/v3/event/' + '2017onsc' + '/matches?X-TBA-Auth-Key=qFdMSZDjbHO7i5OYQl7MUW2oXz4Oxrr0z74s5GR89QVA2dcWx45dfu9HpHfoUtZd', {}, function(error, response) {
+		HTTP.call('GET', 'https://www.thebluealliance.com/api/v3/event/' + '2018onbar' + '/matches?X-TBA-Auth-Key=qFdMSZDjbHO7i5OYQl7MUW2oXz4Oxrr0z74s5GR89QVA2dcWx45dfu9HpHfoUtZd', {}, function(error, response) {
 			tbaMatch.set(response);
 			//console.log(tbaMatch);
 			});

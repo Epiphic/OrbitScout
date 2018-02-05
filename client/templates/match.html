@@ -25,7 +25,8 @@
       <input type="text" class="newScouter" placeholder="Scouter Ex. Brian M">
 
     </div>
- 
+    
+
       
     <!-- AUTO VALUES BEGIN-->
     <div class="page-header">
@@ -33,15 +34,17 @@
 
       <br>
       <p>Auto Mobility</p>
-      <input type="radio" id="AutoRadio1-1" name="crossedbaseline" value="crossYes"><label for="AutoRadio1-1">Yes</label>
-      <input type="radio" id="AutoRadio1-2" name="crossedbaseline" value="crossNo"><label for="AutoRadio1-2">No</label><br>
+        <input type="radio" id="AutoRadio1-1" name="crossedBaseline" value="crossYes"><label for="AutoRadio1-1">Yes</label>
+        <input type="radio" id="AutoRadio1-2" name="crossedBaseline" value="crossNo"><label for="AutoRadio1-2">No</label><br>
+           
      
       {{#if baselineCrossedUnlock}}
      
        <p>Correct Switch Found</p>
-      <input type="radio" id="AutoRadio2-1" name="switchFound" value="foundYes"><label for="AutoRadio2-1">Yes</label>
-      <input type="radio" id="AutoRadio2-2" name="switchFound" value="foundNo"><label for="AutoRadio2-2">No</label><br>
-
+       
+        <input type="radio" id="AutoRadio2-1" name="switchFound" value="foundYes"><label for="AutoRadio2-1">Yes</label>
+        <input type="radio" id="AutoRadio2-2" name="switchFound" value="foundNo"><label for="AutoRadio2-2">No</label><br>
+      
         {{#if switchUnlock}}
        
         <p>Cubes scored in switch</p>
@@ -66,40 +69,101 @@
       {{/if}}
       <br>
 
+
     <!-- TELO OP VALUES BEGIN-->
     </div>
     <div class="page-header">
-      <p class="Tele">Tele-Op</p>
+      <p class="Tele"></p>
+       <div class="col-sm-12">
+          <div class="well">
+            <h4>Tele-Op</h4>
+           </div>
+      
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="well grey">
+                <h2>Switch Cubes Attempted</h2>
+                <div id="counter">{{SwitchCubesAttempted}}</div>
+
+                <div class="button_group">
+                  <button id="subtractSwitchCubeAttempted">- 1</button>
+                  <button id="addSwitchCubeAttempted">+ 1</button>
+                </div>
+
+                <h2>Switch Cubes Scored</h2>
+                <div id="counter">{{SwitchCubesScored}}</div>
+
+                <div class="button_group">
+                  <button id="subtractSwitchCube">- 1</button>
+                  <button id="addSwitchCube">+ 1</button>
+                </div>
+                
+              </div>
+            </div>
+
+           
+             <div class="col-sm-4">
+              <div class="well grey">
+                 <h2>Scale Cubes Attempted</h2>
+                <div id="counter">{{ScaleCubesAttempted}}</div>
+
+                <div class="button_group">
+                  <button id="subtractScaleCubeAttempted">- 1</button>
+                  <button id="addScaleCubeAttempted">+ 1</button>
+                </div>
+
+                <h2>Scale Cubes Scored</h2>
+                <div id="counter">{{ScaleCubesScored}}</div>
+
+                <div class="button_group">
+                  <button id="subtractScaleCube">- 1</button>
+                 <button id="addScaleCube">+ 1</button>
+                </div>
+                
+              </div>
+            </div>
+
+            
+             <div class="col-sm-4">
+              <div class="well grey">
+
+                <h2>Vault Cubes Scored</h2>
+                <div id="counter">{{VaultCubesScored}}</div>
+
+                <div class="button_group">
+                  <button id="subtractVaultCube">- 1</button>
+                  <button id="addVaultCube">+ 1</button>
+                </div>
+            
+                
+              </div>
+            </div>        
+        </div>
+      </div>
      
       <br>
-      <p> Switch Cubes Attempted : Switch Cubes Scored</p>
-      <input id="subtractSwitchCubeAttempted" class="btn btn-info" type="submit" value="-1"><span class="label label-warning" style="font-size:130%;">{{SwitchCubesAttempted}}</span><input id="addSwitchCubeAttempted" class="btn btn-info" type="submit" value="+1">
-
-      <input id="subtractSwitchCube" class="btn btn-info" type="submit" value="-1"><span class="label label-warning" style="font-size:130%;">{{SwitchCubesScored}}</span><input id="addSwitchCube" class="btn btn-info" type="submit" value="+1"><br>
-
-      <br>
-      <p> Scale Cubes Attempted : Scale Cubes Scored</p>
-      <input id="subtractScaleCubeAttempted" class="btn btn-info" type="submit" value="-1"><span class="label label-warning" style="font-size:130%;">{{ScaleCubesAttempted}}</span><input id="addScaleCubeAttempted" class="btn btn-info" type="submit" value="+1">
-
-      <input id="subtractScaleCube" class="btn btn-info" type="submit" value="-1"><span class="label label-warning" style="font-size:130%;">{{ScaleCubesScored}}</span><input id="addScaleCube" class="btn btn-info" type="submit" value="+1"><br>
-
-      <br>
-      <p> Vault Cubes Scored</p>
-      <input id="subtractVaultCube" class="btn btn-info" type="submit" value="-1"><span class="label label-warning" style="font-size:130%;">{{VaultCubesScored}}</span><input id="addVaultCube" class="btn btn-info" type="submit" value="+1"><br>
-
-      <br>
       <p>How quickly can they cycle a cube into the switch?</p>
-      <input type="radio" id="TeleRadio1-1" name="switchSpeed" value="switchFast"><label for="TeleRadio1-1">0-10 seconds</label>
-      <input type="radio" id="TeleRadio1-2" name="switchSpeed" value="switchMedium"><label for="TeleRadio1-2">10-20 seconds</label>
-      <input type="radio" id="TeleRadio1-3" name="switchSpeed" value="switchSlow"><label for="TeleRadio1-3">20-30 seconds</label>
-      <input type="radio" id="TeleRadio1-4" name="switchSpeed" value="switchVerySlow"><label for="TeleRadio1-4">30+ seconds</label><br>
+      <center>
+        <radiogroupP>
+          <input type="radioP" id="TeleRadio1-1" name="switchSpeed" value="switchFast"><label for="TeleRadio1-1">0-10 seconds</label>
+          <input type="radioP" id="TeleRadio1-2" name="switchSpeed" value="switchMedium"><label for="TeleRadio1-2">10-20 seconds</label>
+          <input type="radioP" id="TeleRadio1-3" name="switchSpeed" value="switchSlow"><label for="TeleRadio1-3">20-30 seconds</label>
+          <input type="radioP" id="TeleRadio1-4" name="switchSpeed" value="switchVerySlow"><label for="TeleRadio1-4">30+ seconds</label><br>
+        </radiogroupP>
+      </center>
+      
 
       <br>
       <p>How quickly can they cycle a cube into the Scale?</p>
-      <input type="radio" id="TeleRadio2-1" name="scaleSpeed" value="scaleFast"><label for="TeleRadio2-1">0-10 seconds</label>
-      <input type="radio" id="TeleRadio2-2" name="scaleSpeed" value="scaleMedium"><label for="TeleRadio2-2">10-20 seconds</label>
-      <input type="radio" id="TeleRadio2-3" name="scaleSpeed" value="scaleSlow"><label for="TeleRadio2-3">20-30 seconds</label>
-      <input type="radio" id="TeleRadio2-4" name="scaleSpeed" value="scaleVerySlow"><label for="TeleRadio2-4">30+ seconds</label><br>
+      <center>
+        <radiogroupP>
+            <input type="radioP" id="TeleRadio2-1" name="scaleSpeed" value="scaleFast"><label for="TeleRadio2-1">0-10 seconds</label>
+            <input type="radioP" id="TeleRadio2-2" name="scaleSpeed" value="scaleMedium"><label for="TeleRadio2-2">10-20 seconds</label>
+            <input type="radioP" id="TeleRadio2-3" name="scaleSpeed" value="scaleSlow"><label for="TeleRadio2-3">20-30 seconds</label>
+            <input type="radioP" id="TeleRadio2-4" name="scaleSpeed" value="scaleVerySlow"><label for="TeleRadio2-4">30+ seconds</label><br>
+        </radiogroupP>
+      </center>
+     
 
       <br>
       <p>Can they climb?</p>
@@ -111,10 +175,15 @@
       {{#if climbUnlock}}
           <br>
           <p>How long did their climb take?</p>
-          <input type="radio" id="TeleRadio5-1" name="climbSpeed" value="climbFast"><label for="TeleRadio5-1">0-10 seconds</label>
-          <input type="radio" id="TeleRadio5-2" name="climbSpeed" value="climbMedium"><label for="TeleRadio5-2">10-20 seconds</label>
-          <input type="radio" id="TeleRadio5-3" name="climbSpeed" value="climbSlow"><label for="TeleRadio5-3">20-30 seconds</label>
-          <input type="radio" id="TeleRadio5-4" name="climbSpeed" value="climbVerySlow"><label for="TeleRadio5-4">30+ seconds</label><br>
+          <center>
+            <radiogroup>
+                <input type="radio" id="TeleRadio5-1" name="climbSpeed" value="climbFast"><label for="TeleRadio5-1">0-10 seconds</label>
+                <input type="radio" id="TeleRadio5-2" name="climbSpeed" value="climbMedium"><label for="TeleRadio5-2">10-20 seconds</label>
+                <input type="radio" id="TeleRadio5-3" name="climbSpeed" value="climbSlow"><label for="TeleRadio5-3">20-30 seconds</label>
+                <input type="radio" id="TeleRadio5-4" name="climbSpeed" value="climbVerySlow"><label for="TeleRadio5-4">30+ seconds</label><br>
+            </radiogroup>
+          </center>
+         
        {{/if}}
 
        <br>
