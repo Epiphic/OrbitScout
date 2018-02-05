@@ -4,8 +4,17 @@ import { SortedData } from "../../lib/collections/averages.js"
 
 var currentSearch = new ReactiveVar("");
 
-var Gears = new ReactiveVar(0);
-var GearsAttempted = new ReactiveVar(0);
+var switchScored = new ReactiveVar(0);
+var switchAttempted = new ReactiveVar(0);
+
+var scaleScored = new ReactiveVar(0);
+var scaleAttempted = new ReactiveVar(0);
+
+var vaultScored = new ReactiveVar(0);
+
+var baselineUnlock = new ReactiveVar("");
+var switchUnlock = new ReactiveVar("");
+var scaleUnlock = new ReactiveVar("");
 
 function isBad(val) {
     //console.log(val);
@@ -40,41 +49,113 @@ Template.data.events({
 
 Template.matchDataInsert.events({
 
-	'click #subtractGearAttempted': function (e) {
+	'click #subtractSwitchCubeAttempted': function (e) {
 		e.preventDefault()
 		
 
-		GearsAttempted.set(GearsAttempted.get() - 1)
+		switchAttempted.set(switchAttempted.get() - 1)
 		//console.log(Gears.get())
 
 		
 	},
 
-	'click #addGearAttempted': function (e) {
+	'click #addSwitchCubeAttempted': function (e) {
 		e.preventDefault()
 
-		GearsAttempted.set(GearsAttempted.get() + 1)
+		switchAttempted.set(switchAttempted.get() + 1)
 		//console.log(Gears.get())
 		
 	},
 
-	'click #subtractGear': function (e) {
+	'click #subtractSwitchCube': function (e) {
 		e.preventDefault()
 		
 
-		Gears.set(Gears.get() - 1)
+		switchScored.set(switchScored.get() - 1)
 		//console.log(Gears.get())
 
 		
 	},
 
-	'click #addGear': function (e) {
+	'click #addSwitchCube': function (e) {
 		e.preventDefault()
 
-		Gears.set(Gears.get() + 1)
+		switchScored.set(switchScored.get() + 1)
 		//console.log(Gears.get())
 		
 	},
+
+	'click #subtractScaleCubeAttempted': function (e) {
+		e.preventDefault()
+		scaleAttempted.set(scaleAttempted.get() - 1)
+	},
+
+	'click #addScaleCubeAttempted': function (e) {
+		e.preventDefault()
+		scaleAttempted.set(scaleAttempted.get() + 1)
+	},
+
+	'click #subtractScaleCube': function (e) {
+		e.preventDefault()
+		scaleScored.set(scaleScored.get() - 1)
+
+	},
+
+	'click #addScaleCube': function (e) {
+		e.preventDefault()
+
+		scaleScored.set(scaleScored.get() + 1)
+			
+	},
+
+	'click #addVaultCube': function (e) {
+		e.preventDefault()
+
+		vaultScored.set(vaultScored.get() + 1)
+			
+	},
+
+	'click #subtractVaultCube': function (e) {
+		e.preventDefault()
+		vaultScored.set(vaultScored.get() - 1)
+
+	},
+
+
+
+	'click #AutoRadio1-1': function (e) {
+		baselineUnlock.set(true);	
+	},
+
+	'click #AutoRadio1-2': function (e) {
+		baselineUnlock.set(false);	
+	},
+
+	'click #AutoRadio2-1': function (e) {
+		switchUnlock.set(true);	
+	},
+
+	'click #AutoRadio2-2': function (e) {
+		switchUnlock.set(false);	
+	},
+
+	'click #AutoRadio4-1': function (e) {
+		scaleUnlock.set(true);	
+	},
+
+	'click #AutoRadio4-2': function (e) {
+		scaleUnlock.set(false);	
+	},
+
+
+
+
+
+
+
+
+
+	
 	
 
 	'click #submitMatchData': function (e) {
@@ -85,16 +166,34 @@ Template.matchDataInsert.events({
 		//Match Info Values
 		var numb = $('.newMatchNumber').val();
 		var team = $('.newMatchTeam').val();
-
 		var allianceS = $('#newAllianceStation').val();
-
 		var scouter = $('.newScouter').val();
 
 		//Auto Values
-		var gearAuto = $('input[name=autoGear]:checked').val();
-		var kpaAuto = $('input[name=kpaAuto]:checked').val();
-		var baselineCrossed = $('input[name=crossedbaseline]:checked').val();
-		
+		if(baselineUnlock.get()){
+			console.log("Baseline Unlocked");			
+			var baselineCrossed = true;
+
+			if(switchUnlock.get()){
+				var switchFound = true;
+				var autoSwitchCube = $('input[name=autoSwitchCube]:checked').val();
+			}			
+			else{
+				var switchFound = false;
+			}
+
+			if(switchUnlock.get()){
+				var scaleFound = true;
+				var autoScaleCube = $('input[name=autoScaleCube]:checked').val();
+			}
+			else{
+				switchFound = false;
+			}
+		}
+		else{
+			baselineCrossed = false;
+		}
+				
 		//Tele-op Values
 		var teleAttemptedGear = GearsAttempted.get();
 		var teleGear = Gears.get();
@@ -131,7 +230,7 @@ Template.matchDataInsert.events({
 
 
 		else {
-			e.preventDefault();
+			
 
 		console.log('IT WORKS KIDO');
 		
@@ -216,12 +315,62 @@ Template.data.helpers({
 
 Template.matchDataInsert.helpers({
 	
-	GearsAttempted: function() {
-		return GearsAttempted.get();
+	SwitchCubesAttempted: function() {
+		return switchAttempted.get();
 	},
 
-	Gears: function() {
-		return Gears.get();
+	SwitchCubesScored: function() {
+		return switchScored.get();
+	},
+
+	ScaleCubesAttempted: function() {
+		return scaleAttempted.get();
+	},
+
+	ScaleCubesScored: function() {
+		return scaleScored.get();
+	},
+
+	VaultCubesScored: function() {
+		return vaultScored.get();
+	},
+
+
+
+	baselineCrossedUnlock: function() {
+		if(baselineUnlock.get()) {
+			console.log("working")
+			return true;
+		}
+
+		else {
+			console.log("not wotkng")
+			return false;
+		}
+	},
+
+	switchUnlock: function() {
+		if(switchUnlock.get()) {
+			console.log("working")
+			return true;
+		}
+
+		else {
+			console.log("not wotkng")
+			return false;
+		}
+	},
+
+	scaleUnlock: function() {
+		if(scaleUnlock.get()) {
+			console.log("working")
+			return true;
+		}
+
+		else {
+			console.log("not wotkng")
+			return false;
+		}
 	}
 
 	
