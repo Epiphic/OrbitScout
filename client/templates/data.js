@@ -259,9 +259,11 @@ Template.matchDataInsert.events({
             (isBad(autoSwitchCube)) ||
             (isBad(scaleFound)) ||
             (isBad(autoScaleCube)) ||
-            (isBad(teleSwtichScored)) ||
-            (isBad(teleSwtichAttempted)) ||
+
+            (isBad(teleSwitchScored)) ||
+            (isBad(teleSwitchAttempted)) ||
             (isBad(teleScaleScored)) ||
+            
             (isBad(teleSwitchSpeed)) ||
             (isBad(teleScaleSpeed)) ||
             (isBad(teleStruggle)) ||
