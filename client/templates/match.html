@@ -48,20 +48,22 @@
       <h1>Auto Mobility</h1>      
       <input class="YN" type="radio" id="AutoRadio1-1" name="crossedBaseline" value="crossYes" data-icon='&#xf00c;'><label for="AutoRadio1-1"></label>
       <input class="YN" type="radio" id="AutoRadio1-2" name="crossedBaseline" value="crossNo" data-icon='&#xf00d;'><label for="AutoRadio1-2"></label><br>
-      
+    
+    <div class="Unlocked">
+         
      {{#if baselineCrossedUnlock}}
-
           <h1>Correct Switch Found</h1>          
           <input class="YN" type="radio" id="AutoRadio2-1" name="switchFound" value="foundYes" data-icon='&#xf00c;'><label for="AutoRadio2-1"></label>
           <input class="YN" type="radio" id="AutoRadio2-2" name="switchFound" value="foundNo" data-icon='&#xf00d;'><label for="AutoRadio2-2"></label><br>
-            
+                           
         {{#if switchUnlock}}
-       
-        <h1>Cubes scored in switch</h1>
-        <input class="YN" type="radio" id="AutoRadio3-1" name="autoSwitchCube" value="cubeSwitch0" data-icon='0 Cube'><label for="AutoRadio3-1"></label>
-        <input class="YN" type="radio" id="AutoRadio3-2" name="autoSwitchCube" value="cubeSwitch1" data-icon='1 Cube'><label for="AutoRadio3-2"></label>
-        <input class="YN" type="radio" id="AutoRadio3-3" name="autoSwitchCube" value="cubeSwtich2" data-icon='2 Cube'><label for="AutoRadio3-3"></label><br>
+             
+          <h1>Cubes scored in switch</h1>
+          <input class="YN" type="radio" id="AutoRadio3-1" name="autoSwitchCube" value="cubeSwitch0" data-icon='0 Cube' ><label for="AutoRadio3-1"></label>
+          <input class="YN" type="radio" id="AutoRadio3-2" name="autoSwitchCube" value="cubeSwitch1" data-icon='1 Cube'><label for="AutoRadio3-2"></label>
+          <input class="YN" type="radio" id="AutoRadio3-3" name="autoSwitchCube" value="cubeSwtich2" data-icon='2 Cube'><label for="AutoRadio3-3"></label><br>
         {{/if}}
+    
 
       <br>
       <h1>Correct Scale Found</h1>
@@ -77,6 +79,7 @@
         {{/if}}
            
       {{/if}}
+    </div>
       <br>
 
 
@@ -181,8 +184,8 @@
       <input class="YN" type="radio" id="TeleRadio9-3" name="endgame" value="Climbed" data-icon='Climb'><label for="TeleRadio9-3" ></label>
       
      
-      
-      {{#if climbUnlock}}
+      <div class="Unlocked">
+        {{#if climbUnlock}}
           <br>
           <h1>Type of climb?</h1>
           <input class="YN" type="radio" id="TeleRadio3-1" name="climbType" value="climbOtherTeam" data-icon='Lifted by Partner'><label for="TeleRadio3-1"></label>
@@ -206,7 +209,8 @@
           </center>
          
        {{/if}}
-
+    </div>
+    
        <br>
       <h1>Did they struggle placing cubes?</h1>
       <input class="YN" type="radio" id="TeleRadio4-1" name="struggle" value="struggleYesScale" data-icon='Yes Scale'><label for="TeleRadio4-1"></label>
@@ -257,11 +261,11 @@
 
       <center>
         <radiogroupM>
-          <input class="multi" type="radio" id="TeleRadio8-1" name="evasion" value="defense1"><label for="TeleRadio8-1">1</label>
-          <input class="multi" type="radio" id="TeleRadio8-2" name="evasion" value="defense2"><label for="TeleRadio8-2">2</label>
-          <input class="multi" type="radio" id="TeleRadio8-3" name="evasion" value="defense3"><label for="TeleRadio8-3">3</label>
-          <input class="multi" type="radio" id="TeleRadio8-4" name="evasion" value="defense4"><label for="TeleRadio8-4">4</label>
-          <input class="multi" type="radio" id="TeleRadio8-5" name="evasion" value="defense5"><label for="TeleRadio8-5">5</label><br>
+          <input class="multi" type="radio" id="TeleRadio8-1" name="evasion" value="evasion1"><label for="TeleRadio8-1">1</label>
+          <input class="multi" type="radio" id="TeleRadio8-2" name="evasion" value="evasion2"><label for="TeleRadio8-2">2</label>
+          <input class="multi" type="radio" id="TeleRadio8-3" name="evasion" value="evasion3"><label for="TeleRadio8-3">3</label>
+          <input class="multi" type="radio" id="TeleRadio8-4" name="evasion" value="evasion4"><label for="TeleRadio8-4">4</label>
+          <input class="multi" type="radio" id="TeleRadio8-5" name="evasion" value="evasion5"><label for="TeleRadio8-5">5</label><br>
         </radiogroupM>
       </center>
       

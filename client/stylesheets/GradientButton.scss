@@ -144,12 +144,18 @@ $colHover       : #ffe6d1;
 
 
 input[class ='YN'] {
+
     -webkit-appearance: none;
     -moz-appearance: none;
     -o-appearance: none;
     -ms-appearance: none;
     appearance: none;
     outline: none;
+    
+    
+    &:focus{
+		outline:0;
+    }
     
     &:after {
         font-family: 'FontAwesome';
@@ -162,7 +168,12 @@ input[class ='YN'] {
         color: rgba(0,0,0,.4);
         transition: box-shadow 1s, color 1s;
     }
-    
+
+    &:not(:checked) {
+        box-shadow: 2px 2px 14px rgba(0,0,0,.4);
+        border-radius: 15px;
+    }
+
     &:checked {
         &:after {
             box-shadow: 2px 2px 14px rgba(0,0,0,.4);

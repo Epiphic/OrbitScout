@@ -24,7 +24,11 @@ var climbUnlock = new ReactiveVar("");
 function isBad(val) {
     //console.log(val);
     if(val == undefined || val == ""){
+    	console.log(val + "IS BAD")
         return true
+    }
+    else{
+    	console.log(val + "WROEKD")
     }
     
 }
@@ -254,11 +258,12 @@ Template.matchDataInsert.events({
             (isBad(team)) ||
            	(isBad(allianceS)) ||
             (isBad(scouter)) ||
+
             (isBad(baselineCrossed)) ||
-            (isBad(switchFound)) ||
-            (isBad(autoSwitchCube)) ||
-            (isBad(scaleFound)) ||
-            (isBad(autoScaleCube)) ||
+           // (isBad(switchFound)) ||
+           // (isBad(autoSwitchCube)) ||
+           // (isBad(scaleFound)) ||
+          //  (isBad(autoScaleCube)) ||
 
             (isBad(teleSwitchScored)) ||
             (isBad(teleSwitchAttempted)) ||
@@ -268,8 +273,8 @@ Template.matchDataInsert.events({
             (isBad(teleScaleSpeed)) ||
             (isBad(teleStruggle)) ||
             (isBad(teleDied)) ||
-            (isBad(teleClimb)) ||
-            (isBad(teleClimbSpeed)) ||
+            //(isBad(teleClimb)) ||
+           // (isBad(teleClimbSpeed)) ||
             (isBad(teleScaleAttempted)) ||
             (isBad(defense)) ||
             (isBad(evasion)) ||

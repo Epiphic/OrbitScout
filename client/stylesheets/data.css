@@ -99,7 +99,9 @@ border-color: grey
 }
 
 
-
+.Unlocked{
+  background-color: lightblue
+}
 
 
 .button_group{
