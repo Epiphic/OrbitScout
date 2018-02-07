@@ -10,13 +10,13 @@
 
       <form action="#0">
           <div class="spice">
-             <input type="text" name="newMatchNumber" class="newMatchNumber" required placeholder=" " ><label for="newMatchNumber">Match Number</label>
+             <input type="text" name="newMatchNumber" class="newMatchNumber" required placeholder="Match Number" >
           </div>
       </form>
 
        <form action="#0">
           <div class="spice">
-             <input type="text" name="newMatchTeam" class="newMatchTeam" required placeholder=" " ><label for="newMatchTeam">Team Number</label>
+             <input type="text" name="newMatchTeam" class="newMatchTeam" required placeholder="Team Number" >
           </div>
       </form>  
 
@@ -34,7 +34,7 @@
   
         <form action="#0">
             <div class="spice">
-             <input type="text" name="newScouter" class="newScouter" required placeholder=" " ><label for="newScouter">New Scouter</label>
+             <input type="text" name="newScouter" class="newScouter" required placeholder="New Scouter" >
             </div>
         </form>  
 
@@ -64,16 +64,16 @@
         {{/if}}
 
       <br>
-      <p>Correct Scale Found</p>
-      <input type="radio" id="AutoRadio4-1" name="scaleFound" value="foundYes"><label for="AutoRadio4-1">Yes</label>
-      <input type="radio" id="AutoRadio4-2" name="scaleFound" value="foundNo"><label for="AutoRadio4-2">No</label><br>
+      <h1>Correct Scale Found</h1>
+      <input class="YN" type="radio" id="AutoRadio4-1" name="scaleFound" value="foundYes" data-icon='&#xf00c;'><label for="AutoRadio4-1"></label>
+      <input class="YN" type="radio" id="AutoRadio4-2" name="scaleFound" value="foundNo" data-icon='&#xf00d;'><label for="AutoRadio4-2"></label><br>
 
         {{#if scaleUnlock}}
       
-        <p>Cubes scored in scale</p>
-        <input type="radio" id="AutoRadio5-1" name="autoScaleCube" value="cubeScale0"><label for="AutoRadio5-1">0</label>
-        <input type="radio" id="AutoRadio5-2" name="autoScaleCube" value="cubeScale1"><label for="AutoRadio5-2">1</label>
-        <input type="radio" id="AutoRadio5-3" name="autoScaleCube" value="cubeScale2"><label for="AutoRadio5-3">2</label><br>
+        <h1>Cubes scored in scale</h1>
+        <input class="YN" type="radio" id="AutoRadio5-1" name="autoScaleCube" value="cubeScale0" data-icon='0 Cube'><label for="AutoRadio5-1"></label>
+        <input class="YN" type="radio" id="AutoRadio5-2" name="autoScaleCube" value="cubeScale1" data-icon='1 Cube'><label for="AutoRadio5-2"></label>
+        <input class="YN" type="radio" id="AutoRadio5-3" name="autoScaleCube" value="cubeScale2" data-icon='2 Cube'><label for="AutoRadio5-3"></label><br>
         {{/if}}
            
       {{/if}}
@@ -152,7 +152,7 @@
       </div>
      
       <br>
-      <p>How quickly can they cycle a cube into the switch?</p>
+      <h1>Switch Cycle</h1>
       <center>
         <radiogroupM>
           <input class="multi" type="radio" id="TeleRadio1-1" name="switchSpeed" value="switchFast"><label for="TeleRadio1-1">0-10 seconds</label>
@@ -164,7 +164,7 @@
       
 
       <br>
-      <p>How quickly can they cycle a cube into the Scale?</p>
+      <h1>Scale Cycle</h1>
       <center>
         <radiogroupM>
             <input class="multi" type="radio" id="TeleRadio2-1" name="scaleSpeed" value="scaleFast"><label for="TeleRadio2-1">0-10 seconds</label>
@@ -175,27 +175,27 @@
       </center>
 
       <br>
-      <p>Endgame?</p>
-      <input type="radioYN" id="TeleRadio9-1" name="endgame" value="parkNo"><label for="TeleRadio9-1">Not Parked</label>
-      <input type="radioYN" id="TeleRadio9-2" name="endgame" value="parkYes"><label for="TeleRadio9-2">Parked</label>
-      <input type="radioYN" id="TeleRadio9-3" name="endgame" value="Climbed"><label for="TeleRadio9-3">Climb</label>
+      <h1>Endgame</h1>
+      <input class="YN" type="radio" id="TeleRadio9-1" name="endgame" value="parkNo" data-icon='Not Parked'><label for="TeleRadio9-1" ></label>
+      <input class="YN" type="radio" id="TeleRadio9-2" name="endgame" value="parkYes" data-icon='Parked'><label for="TeleRadio9-2" ></label>
+      <input class="YN" type="radio" id="TeleRadio9-3" name="endgame" value="Climbed" data-icon='Climb'><label for="TeleRadio9-3" ></label>
       
      
       
       {{#if climbUnlock}}
           <br>
-          <p>Type of climb?</p>
-          <input type="radioYN" id="TeleRadio3-1" name="climbType" value="climbOtherTeam"><label for="TeleRadio3-1">Scaled by Other Team</label>
-          <input type="radioYN" id="TeleRadio3-2" name="climbType" value="climbOne"><label for="TeleRadio3-2">Scaled 1 Bot</label>
-          <input type="radioYN" id="TeleRadio3-3" name="climbType" value="climbTwo"><label for="TeleRadio3-3">Scaled 2 Bots</label>
-          <input type="radioYN" id="TeleRadio3-4" name="climbType" value="climbThree"><label for="TeleRadio3-4">Scaled 3 Bots</label>
+          <h1>Type of climb?</h1>
+          <input class="YN" type="radio" id="TeleRadio3-1" name="climbType" value="climbOtherTeam" data-icon='Lifted by Partner'><label for="TeleRadio3-1"></label>
+          <input class="YN" type="radio" id="TeleRadio3-2" name="climbType" value="climbOne" data-icon='Scaled 1 bot'><label for="TeleRadio3-2"></label>
+          <input class="YN" type="radio" id="TeleRadio3-3" name="climbType" value="climbTwo" data-icon='Scaled 2 bots'><label for="TeleRadio3-3"></label>
+          <input class="YN" type="radio" id="TeleRadio3-4" name="climbType" value="climbThree" data-icon='Scaled 3 Bots'><label for="TeleRadio3-4"></label>
 
-          <p>Did it work?</p>
-          <input type="radioYN" id="TeleRadio10-1" name="climbWork" value="climbYes"><label for="TeleRadio10-1">Yes</label>
-          <input type="radioYN" id="TeleRadio10-2" name="climbWork" value="climbNo"><label for="TeleRadio10-2">No</label>
+          <h1>Did it work?</h1>
+          <input class="YN" type="radio" id="TeleRadio10-1" name="climbWork" value="climbYes" data-icon='&#xf00c;'><label for="TeleRadio10-1"></label>
+          <input class="YN" type="radio" id="TeleRadio10-2" name="climbWork" value="climbNo" data-icon='&#xf00d;'><label for="TeleRadio10-2"></label>
                     
           <br>
-          <p>How long did their climb take?</p>
+          <h1>How long did their climb take?</h1>
           <center>
             <radiogroupM>
                 <input class="multi" type="radio" id="TeleRadio5-1" name="climbSpeed" value="climbFast"><label for="TeleRadio5-1">0-10 seconds</label>
@@ -208,18 +208,18 @@
        {{/if}}
 
        <br>
-      <p>Did they struggle placing cubes?</p>
-      <input type="radioYN" id="TeleRadio4-1" name="struggle" value="struggleYesScale"><label for="TeleRadio4-1">Yes, in the Scale</label>
-      <input type="radioYN" id="TeleRadio4-2" name="struggle" value="struggleYesSwitch"><label for="TeleRadio4-2">Yes, in the Switch</label>
-      <input type="radioYN" id="TeleRadio4-3" name="struggle" value="struggleYesBoth"><label for="TeleRadio4-3">Yes, in both</label>
-      <input type="radioYN" id="TeleRadio4-4" name="struggle" value="struggleNo"><label for="TeleRadio4-4">No</label><br>
+      <h1>Did they struggle placing cubes?</h1>
+      <input class="YN" type="radio" id="TeleRadio4-1" name="struggle" value="struggleYesScale" data-icon='Yes Scale'><label for="TeleRadio4-1"></label>
+      <input class="YN" type="radio" id="TeleRadio4-2" name="struggle" value="struggleYesSwitch" data-icon='Yes Switch'><label for="TeleRadio4-2"></label>
+      <input class="YN" type="radio" id="TeleRadio4-3" name="struggle" value="struggleYesBoth" data-icon='Yes Both'><label for="TeleRadio4-3"></label>
+      <input class="YN" type="radio" id="TeleRadio4-4" name="struggle" value="struggleNo" data-icon='No'><label for="TeleRadio4-4"></label><br>
 
      
 
       <br>
-      <p>Did they die during their match?</p>
-      <input type="radioYN" id="TeleRadio6-1" name="matchDied" value="Yes"><label for="TeleRadio6-1">Yes</label>
-      <input type="radioYN" id="TeleRadio6-2" name="matchDied" value="No"><label for="TeleRadio6-2">No</label><br>
+      <h1>Did they die during their match?</h1>
+      <input class="YN" type="radio" id="TeleRadio6-1" name="matchDied" value="Yes" data-icon='&#xf00c;'><label for="TeleRadio6-1"></label>
+      <input class="YN" type="radio" id="TeleRadio6-2" name="matchDied" value="No" data-icon='&#xf00d;'><label for="TeleRadio6-2"></label><br>
 
     </div>
 <!---===============================================QUALITATIVE DATA========================================-->
@@ -229,11 +229,17 @@
     <div class="page-header">
       <p class="MatchInfo">Qualitative Data</p>
 
-      <input type="text" class="qualitativeData" placeholder="Ex. Their driving is extremely good"><br>
+      <form action="#0">
+            <div class="spice">
+             <input type="text" name="qualitativeData" class="qualitativeData" required placeholder="Qualitative Data" >
+            </div>
+        </form>  
+
+     
 
      
       <br>
-      <p>How good was their defense?</p>
+      <h1>How good was their defense?</h1>
       <center>
         <radiogroupM>
           <input class="multi" type="radio" id="TeleRadio7-1" name="defense" value="defense1"><label for="TeleRadio7-1">1</label>
@@ -247,7 +253,7 @@
       
 
       <br>
-      <p>How good was their evasion / driving?</p>
+      <h1>How good was their evasion / driving?</h1>
 
       <center>
         <radiogroupM>
@@ -256,7 +262,7 @@
           <input class="multi" type="radio" id="TeleRadio8-3" name="evasion" value="defense3"><label for="TeleRadio8-3">3</label>
           <input class="multi" type="radio" id="TeleRadio8-4" name="evasion" value="defense4"><label for="TeleRadio8-4">4</label>
           <input class="multi" type="radio" id="TeleRadio8-5" name="evasion" value="defense5"><label for="TeleRadio8-5">5</label><br>
-        </radiogroupM>s
+        </radiogroupM>
       </center>
       
 
