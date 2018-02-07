@@ -8,8 +8,19 @@
     <div class="page-header">
       <p class="MatchInfo">Match Info</p>
 
-      <input type="text" class="newMatchNumber" placeholder="Match Number Ex. 54">
-      <input type="text" class="newMatchTeam" placeholder="Team Number Ex. 254">
+      <form action="#0">
+          <div class="spice">
+             <input type="text" name="newMatchNumber" class="newMatchNumber" required placeholder=" " ><label for="newMatchNumber">Match Number</label>
+          </div>
+      </form>
+
+       <form action="#0">
+          <div class="spice">
+             <input type="text" name="newMatchTeam" class="newMatchTeam" required placeholder=" " ><label for="newMatchTeam">Team Number</label>
+          </div>
+      </form>  
+
+      
       <center> 
          <select id="newAllianceStation" class="form-control" style="max-width: 175px">
           <option value="red1">Red 1</option>
@@ -21,47 +32,35 @@
         </select>
       </center>
   
-     
-        <input id="clean-slide" type="text" class="newScouter" placeholder="Scouter Ex. Brian M" >
-     
-      
+        <form action="#0">
+            <div class="spice">
+             <input type="text" name="newScouter" class="newScouter" required placeholder=" " ><label for="newScouter">New Scouter</label>
+            </div>
+        </form>  
 
     </div>
-    
-
-      
+         
     <!-- AUTO VALUES BEGIN-->
     <div class="page-header">
       <p class="Auto">Auto</p>
 
       <br>
-      <p>Auto Mobility</p>
-
-        <input class="YN" type="radio" id="AutoRadio1-1" name="crossedBaseline" value="crossYes" data-icon='&#xf00c;'><label for="AutoRadio1-1"></label>
-        <input class="YN" type="radio" id="AutoRadio1-2" name="crossedBaseline" value="crossNo" data-icon='&#xf00d;'><label for="AutoRadio1-2"></label><br>
+      <h1>Auto Mobility</h1>      
+      <input class="YN" type="radio" id="AutoRadio1-1" name="crossedBaseline" value="crossYes" data-icon='&#xf00c;'><label for="AutoRadio1-1"></label>
+      <input class="YN" type="radio" id="AutoRadio1-2" name="crossedBaseline" value="crossNo" data-icon='&#xf00d;'><label for="AutoRadio1-2"></label><br>
       
-      {{#if baselineCrossedUnlock}}
+     {{#if baselineCrossedUnlock}}
+
+          <h1>Correct Switch Found</h1>          
+          <input class="YN" type="radio" id="AutoRadio2-1" name="switchFound" value="foundYes" data-icon='&#xf00c;'><label for="AutoRadio2-1"></label>
+          <input class="YN" type="radio" id="AutoRadio2-2" name="switchFound" value="foundNo" data-icon='&#xf00d;'><label for="AutoRadio2-2"></label><br>
             
-       
-         <div class="toggle-radio">
-          <p>Correct Switch Found</p>          
-           <input type="radio" id="AutoRadio2-1" name="switchFound" value="foundYes"><label for="AutoRadio2-1">yes</label>
-           <input type="radio" id="AutoRadio2-2" name="switchFound" value="foundNo" ><label for="AutoRadio2-2">no</label><br>
-        
-         </div>
-      
-
-      
-
-       
-       
-      
         {{#if switchUnlock}}
        
-        <p>Cubes scored in switch</p>
-        <input type="radio" id="AutoRadio3-1" name="autoSwitchCube" value="cubeSwitch0"><label for="AutoRadio3-1">0</label>
-        <input type="radio" id="AutoRadio3-2" name="autoSwitchCube" value="cubeSwitch1"><label for="AutoRadio3-2">1</label>
-        <input type="radio" id="AutoRadio3-3" name="autoSwitchCube" value="cubeSwtich2"><label for="AutoRadio3-3">2</label><br>
+        <h1>Cubes scored in switch</h1>
+        <input class="YN" type="radio" id="AutoRadio3-1" name="autoSwitchCube" value="cubeSwitch0" data-icon='0 Cube'><label for="AutoRadio3-1"></label>
+        <input class="YN" type="radio" id="AutoRadio3-2" name="autoSwitchCube" value="cubeSwitch1" data-icon='1 Cube'><label for="AutoRadio3-2"></label>
+        <input class="YN" type="radio" id="AutoRadio3-3" name="autoSwitchCube" value="cubeSwtich2" data-icon='2 Cube'><label for="AutoRadio3-3"></label><br>
         {{/if}}
 
       <br>
