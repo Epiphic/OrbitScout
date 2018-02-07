@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url(https://fonts.googleapis.com/css?family=Oswald:700,300);
 
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
 body{
 	background: silver;
 	//color: #2F7FC4;
+  
 }
 
 //Match Scouting formatting
@@ -50,61 +53,7 @@ div.page-header{
   left: 50%;
   transform: translate(-50%,-50%);
 }
-/*
 
-input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-label {
-  font-weight: normal;
-  position: relative;
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 10px;
-  line-height: 36px;
-  cursor: pointer;
-}
-label::before {
-  content: " ";
-  position: absolute;
-  top: 6px;
-  left: 0;
-  display: block;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #21409A;
-  border-radius: 4px;
-  z-index: -1;
-}
-input[type="radio"] + label::before {
-  border-radius: 18px;
-}
-/* Checked */
-/*
-input[type="radio"]:checked + label {
-  padding-left: 10px;
-  color: #fff;
-}
-
-input[type="radio"]:checked + label::before {
-
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #21409A;
-}
-/* Transition *//*
-label,
-label::before {
-  -webkit-transition: .25s all ease;
-  -o-transition: .25s all ease;
-  transition: .25s all ease;
-}
-*/
 
 p.MatchInfo {
 	text-align: center;
@@ -191,3 +140,4 @@ button:active{
   background: rgba(0,0,0,0.1);
   padding: 1em 0;
 }
+
