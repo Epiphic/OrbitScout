@@ -38,7 +38,7 @@ Template.strategy.events({
 				};
 			}
 
-		mostRecentMatch.set(14);
+	
 		MatchNumber.set(mostRecentMatch.get()+1)
 
 
