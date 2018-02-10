@@ -23,12 +23,15 @@ var climbUnlock = new ReactiveVar("");
 
 function isBad(val) {
     //console.log(val);
-    if(val == undefined || val == ""){
-    	console.log(val + "IS BAD")
-        return true
-    }
+    if(val === undefined || val === ""){
+    	console.log(val + "IS BAD");
+    	return true
+        
+    }    
     else{
-    	console.log(val + "WROEKD")
+    	console.log(val + "IS GOOD");
+    	
+    	
     }
     
 }
@@ -168,21 +171,10 @@ Template.matchDataInsert.events({
 		climbUnlock.set(true);	
 	},
 	
-
-
-
-
-
-
-
-
-
-	
 	
 
 	'click #submitMatchData': function (e) {
 		
-
 		var matchData = {};
 
 		//Match Info Values
@@ -192,36 +184,54 @@ Template.matchDataInsert.events({
 		var scouter = $('.newScouter').val();
 
 		//Auto Values
-		if(baselineUnlock.get()){
-			console.log("Baseline Unlocked");			
-			var baselineCrossed = true;
-
+		if(baselineUnlock.get()){					
+			var baselineCrossed = "true";
+			
 			if(switchUnlock.get()){
-				var switchFound = true;
+				
+				var switchFound = "true";
 				var autoSwitchCube = $('input[name=autoSwitchCube]:checked').val();
-			}			
+			}
+			else if(switchUnlock.get() === ""){
+				
+			}
 			else{
-				var switchFound = false;
-				var autoSwitchCube = "Locked"
+
+				var switchFound = "false";
+				var autoSwitchCube = "Locked";
 			}
 
-			if(switchUnlock.get()){
-				var scaleFound = true;
+			if(scaleUnlock.get()){
+				var scaleFound = "true";
 				var autoScaleCube = $('input[name=autoScaleCube]:checked').val();
 			}
+			else if(scaleUnlock.get() === ""){
+				
+			}
 			else{
-				var switchFound = false;
-				var autoScaleCube = "Locked"
+				var scaleFound = "false";
+				var autoScaleCube = "Locked";
 			}
 		}
+		else if(baselineUnlock.get() === undefined){
+			baselineCrossed = undefined;
+			var switchFound = "false";
+			var autoSwitchCube = "Locked";
+			var scaleFound = "false";
+			var autoScaleCube = "Locked";
+		}		
 		else{
-			var baselineCrossed = false;
-
+			var baselineCrossed = "false";
+			var switchFound = "false";
+			var autoSwitchCube = "Locked";
+			var scaleFound = "false";
+			var autoScaleCube = "Locked";
 		}
+
 				
 		//Tele-op Values
-		var teleSwtichScored = switchScored.get();
-		var teleSwtichAttempted = switchAttempted.get();
+		var teleSwitchScored = switchScored.get();
+		var teleSwitchAttempted = switchAttempted.get();
 		var teleScaleScored = scaleScored.get();
 		var teleScaleAttempted = scaleAttempted.get();
 		var teleVaultScored = vaultScored.get();
@@ -231,20 +241,23 @@ Template.matchDataInsert.events({
 		var teleStruggle = $('input[name=struggle]:checked').val();
 		var teleDied = $('input[name=matchDied]:checked').val();
 
-		if(climbUnlock.get()){
-			console.log("Climb Unlocked");
-			var climbType = $('input[name=climbType]:checked').val();			
+		if(climbUnlock.get()){			
+			var endgame = $('input[name=endgame]:checked').val();			
 			var teleClimbSpeed = $('input[name=climbSpeed]:checked').val();
 
-			if($('input[name=climbWork]:checked').val() == "climbYes"){
-				var teleClimb = true;
+			if($('input[name=climbWork]:checked').val() === "climbYes"){
+				var teleClimb = "true";
+			}
+			if($('input[name=climbWork]:checked').val() === undefined){
+				
 			}
 			else{
-				var teleClimb = false;
+				var teleClimb = "false";
 			}
 		}
 		else{
-			var teleClimb = false;
+			var endgame = "Locked";	
+			var teleClimb = "false";
 			var teleClimbSpeed = "Locked";
 		}
 
@@ -253,32 +266,30 @@ Template.matchDataInsert.events({
 		var defense = $('input[name=defense]:checked').val();
 		var evasion = $('input[name=evasion]:checked').val();
 
-		
-		if( ((isBad(numb)) ||
-            (isBad(team)) ||
+	
+		if( ((isBad(numb)) ||		
+			(isBad(team)) ||
            	(isBad(allianceS)) ||
-            (isBad(scouter)) ||
-
-            (isBad(baselineCrossed)) ||
-           // (isBad(switchFound)) ||
-           // (isBad(autoSwitchCube)) ||
-           // (isBad(scaleFound)) ||
-          //  (isBad(autoScaleCube)) ||
-
+           	(isBad(scouter)) ||
+        	(isBad(baselineCrossed)) ||
+           	(isBad(switchFound)) ||
+        	(isBad(autoSwitchCube)) ||
+           	(isBad(scaleFound)) ||
+           	(isBad(autoScaleCube)) ||
             (isBad(teleSwitchScored)) ||
             (isBad(teleSwitchAttempted)) ||
             (isBad(teleScaleScored)) ||
-            
+            (isBad(teleScaleAttempted)) ||
+            (isBad(teleVaultScored)) ||            
             (isBad(teleSwitchSpeed)) ||
             (isBad(teleScaleSpeed)) ||
             (isBad(teleStruggle)) ||
             (isBad(teleDied)) ||
-            //(isBad(teleClimb)) ||
-           // (isBad(teleClimbSpeed)) ||
-            (isBad(teleScaleAttempted)) ||
+			(isBad(endgame)) ||
+            (isBad(teleClimb)) ||
+           	(isBad(teleClimbSpeed)) ||
             (isBad(defense)) ||
-            (isBad(evasion)) ||
-            (isBad(teleVaultScored))) ) {
+            (isBad(evasion)))){
    			 // One field is empty somewhere
    			 alert("FILL THE WHOLE FORM");
 
@@ -307,15 +318,16 @@ Template.matchDataInsert.events({
 			autoScaleCube:autoScaleCube,
 
 			//Tele-op Info
-			teleSwtichScored:teleSwtichScored,
-			teleSwtichAttempted:teleSwtichAttempted,
+			teleSwitchScored:teleSwitchScored,
+			teleSwitchAttempted:teleSwitchAttempted,
 			teleScaleScored:teleScaleScored,
 			teleSwitchSpeed:teleSwitchSpeed,
 			teleScaleSpeed:teleScaleSpeed,
 			teleStruggle:teleStruggle,
 			teleDied:teleDied,
+			endgame:endgame,
 			teleClimb:teleClimb,
-			teleClimbSpeed:teleClimbSpeed,
+			teleSpeed:teleClimbSpeed,
 			teleScaleAttempted:teleScaleAttempted,
 			defense:defense,
 			evasion:evasion,
