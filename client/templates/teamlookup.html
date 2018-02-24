@@ -25,52 +25,67 @@
 					  <table class="table">
 					    <tr>
 						    <th>AUTO</th>
-						    <th>Average</th> 
+						    <th>Stat</th> 
 						    <th>TELE-OP</th>
-						    <th>Average</th>
+						    <th>Stat</th>
+						    <th>ENDGAME</th>
+						    <th>Stat</th>
+
 						</tr>
 
 						<tr>
-						    <td>Middle Gear Stats:</td>
+						    <td>Auto Switch Percentage:</td>
 						    <td>
 								<div class="progress">
-								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.totalMiddleGearAverage}}%; color: silver;">
-								    {{Teamlookup.advancedaverages.totalMiddleGearAverage}}%
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.AutoSwitchSuccessAvg}}%; color: silver;">
+								    {{Teamlookup.advancedaverages.AutoSwitchSuccessAvg}}%
 								  </div>
 								</div>
 						    </td> 
 
 
-						    <td>Gear Missed Average: </td>
-						    <td>{{Teamlookup.advancedaverages.totalGearsDroppedAverage}}</td>
+						    <td>Scale Cubes Avg: </td>
+						    <td>{{Teamlookup.advancedaverages.ScaleCubeAvg}}</td>
+
+						    <td>Park Avg</td>
+						    <td>
+						    	<div class="progress">
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:  {{Teamlookup.advancedaverages.ParkAvg}}%; color: silver;">
+								     {{Teamlookup.advancedaverages.ParkAvg}}%
+								  </div>
+								</div>
+						   </td>
 						</tr>
 
 						<tr>
-						    <td>Side Gear Stats:</td>
+						    <td>Auto Scale Percentage:</td>
 						    <td>
 								<div class="progress">
-								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.totalSideGearAverage}}%; color: silver;">
-								    {{Teamlookup.advancedaverages.totalSideGearAverage}}%
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.AutoScaleSuccessAvg}}%; color: silver;">
+								    {{Teamlookup.advancedaverages.AutoScaleSuccessAvg}}%
 								  </div>
 								</div>
 						    </td> 
 
 
-						    <td>Gear Average:</td>
-						    <td>{{Teamlookup.advancedaverages.totalGearsScoredAverage}}</td>
+						    <td>Scale Cubes Avg:</td>
+						    <td>{{Teamlookup.advancedaverages.SwitchCubeAvg}}</td>
+
+						    <td>Bots Climbed Avg</td>
+						    <td>{{Teamlookup.advancedaverages.BotsClimbedAvg}}</td>
 						</tr>
 
 						<tr>
 						    <td>Crossed Baseline Stats:</td>
 						    <td>
 						    	<div class="progress">
-								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.ChancetoHit_Baseline}}%; color: silver;">
-								    {{Teamlookup.advancedaverages.ChancetoHit_Baseline}}%
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.BaselineAvg}}%; color: silver;">
+								    {{Teamlookup.advancedaverages.BaselineAvg}}%
 								  </div>
 								</div>
 						    </td> 
-						    <td>Shooting Stats:</td>
-						    <td>{{Teamlookup.teleKPA}}</td>
+						    <td>Vault Cubes Avg:</td>
+						    <td>{{Teamlookup.advancedaverages.VaultCubeAvg}}</td>
 						</tr>
 
 						<tr>

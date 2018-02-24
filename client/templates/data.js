@@ -256,7 +256,7 @@ Template.matchDataInsert.events({
 			}
 		}
 		else{
-			var endgame = "Locked";	
+			var endgame = $('input[name=endgame]:checked').val();	
 			var teleClimb = "false";
 			var teleClimbSpeed = "Locked";
 		}
@@ -353,7 +353,7 @@ Template.matchDataInsert.events({
 			}
 		}
 		
-		if(Duplicate == false){
+		if(Duplicate === false){
 			console.log("send to nromal")
 			Data.insert(matchData);			
 			}
@@ -367,7 +367,7 @@ Template.data.helpers({
 	Alldata: function () {
 		
 
-		if (currentSearch.get() == ""){
+		if (currentSearch.get() === ""){
 			return Data.find().fetch();
 			
 		}
