@@ -37,15 +37,15 @@
 						    <td>Auto Switch Percentage:</td>
 						    <td>
 								<div class="progress">
-								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.AutoSwitchSuccessAvg}}%; color: silver;">
-								    {{Teamlookup.advancedaverages.AutoSwitchSuccessAvg}}%
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.autoSwitchSuccessAvg}}%; color: silver;">
+								    {{Teamlookup.advancedaverages.autoSwitchSuccessAvg}}%
 								  </div>
 								</div>
 						    </td> 
 
 
 						    <td>Scale Cubes Avg: </td>
-						    <td>{{Teamlookup.advancedaverages.ScaleCubeAvg}}</td>
+						    <td>{{Teamlookup.advancedaverages.ScaleCubeAvg}} / {{Teamlookup.advancedaverages.ScaleDropAvg}}</td>
 
 						    <td>Park Avg</td>
 						    <td>
@@ -61,15 +61,15 @@
 						    <td>Auto Scale Percentage:</td>
 						    <td>
 								<div class="progress">
-								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.AutoScaleSuccessAvg}}%; color: silver;">
-								    {{Teamlookup.advancedaverages.AutoScaleSuccessAvg}}%
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.autoScaleSuccessAvg}}%; color: silver;">
+								    {{Teamlookup.advancedaverages.autoScaleSuccessAvg}}%
 								  </div>
 								</div>
 						    </td> 
 
 
-						    <td>Scale Cubes Avg:</td>
-						    <td>{{Teamlookup.advancedaverages.SwitchCubeAvg}}</td>
+						    <td>Switch Cubes Avg:</td>
+						    <td>{{Teamlookup.advancedaverages.SwitchCubeAvg}} / {{Teamlookup.advancedaverages.SwitchDropAvg}}</td>
 
 						    <td>Bots Climbed Avg</td>
 						    <td>{{Teamlookup.advancedaverages.BotsClimbedAvg}}</td>
@@ -86,20 +86,57 @@
 						    </td> 
 						    <td>Vault Cubes Avg:</td>
 						    <td>{{Teamlookup.advancedaverages.VaultCubeAvg}}</td>
+
+						    <td>Climb Speed Avg</td>
+						    <td>
+						    	<div class="progress">
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.climbSpeed}}%; color: silver;">
+								    {{Teamlookup.advancedaverages.climbSpeed}}%
+								  </div>
+								</div>
+							</td>
 						</tr>
 
 						<tr>
-						    <td>Auto KPA Stats:</td>
-						    <td>{{Teamlookup.AutoKPA}}</td> 
-						    <td>Climbing Stats:</td>
-						    <td>{{Teamlookup.teleClimb}}</td>
+						    <td>Auto Switch Cubes Avg:</td>
+						    <td>{{Teamlookup.advancedaverages.autoSwitchAvg}}</td> 
+						    <td>Switch Speed Avg:</td>
+						    <td>
+						    	<div class="progress">
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.SwitchSpeed}}%; color: silver;">
+								   {{Teamlookup.advancedaverages.SwitchSpeed}}%
+								  </div>
+								</div>
+						    </td>
+						    <td>Climb Success Avg:</td>
+						    <td>
+						    	<div class="progress">
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.climbSuccessRate}}%; color: silver;">
+								    {{Teamlookup.advancedaverages.climbSuccessRate}}%
+								  </div>
+								</div>
+							</td>
 						</tr>
 
 						<tr>
-						    <td>Presto Stats:</td>
-						    <td>{{Teamlookup.Presto}}</td> 
+						    <td>Auto Scale Cubes Avg:</td>
+						    <td>{{Teamlookup.advancedaverages.autoScaleAvg}}</td> 
+						    <td>Scale Speed Avg:</td>
+						    <td>
+						    	<div class="progress">
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.ScaleSpeed}}%; color: silver;">
+								   {{Teamlookup.advancedaverages.ScaleSpeed}}%
+								  </div>
+								</div>
+							</td>
 						    <td>Died Stats:</td>
-						    <td>{{Teamlookup.teleDied}}</td>
+						    <td>
+						    	<div class="progress">
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.ScaleSpeed}}%; color: silver;">
+								   {{Teamlookup.advancedaverages.teleDiedAvg}}%
+								  </div>
+								</div>
+							</td>
 						</tr>
 
 					  </table>

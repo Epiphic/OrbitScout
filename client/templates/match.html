@@ -52,23 +52,23 @@
     <div class="Unlocked">
          
      {{#if baselineCrossedUnlock}}
-          <h1>Correct Switch Found</h1>          
-          <input class="YN" type="radio" id="AutoRadio2-1" name="switchFound" value="foundYes" data-icon='&#xf00c;'><label for="AutoRadio2-1"></label>
-          <input class="YN" type="radio" id="AutoRadio2-2" name="switchFound" value="foundNo" data-icon='&#xf00d;'><label for="AutoRadio2-2"></label><br>
+          <h1>Switch Attempted</h1>          
+          <input class="YN" type="radio" id="AutoRadio2-1" name="switchAttempted" value="attemptYes" data-icon='&#xf00c;'><label for="AutoRadio2-1"></label>
+          <input class="YN" type="radio" id="AutoRadio2-2" name="switchAttempted" value="attemptNo" data-icon='&#xf00d;'><label for="AutoRadio2-2"></label><br>
                            
         {{#if switchUnlock}}
              
           <h1>Cubes scored in switch</h1>
           <input class="YN" type="radio" id="AutoRadio3-1" name="autoSwitchCube" value="cubeSwitch0" data-icon='0 Cube' ><label for="AutoRadio3-1"></label>
           <input class="YN" type="radio" id="AutoRadio3-2" name="autoSwitchCube" value="cubeSwitch1" data-icon='1 Cube'><label for="AutoRadio3-2"></label>
-          <input class="YN" type="radio" id="AutoRadio3-3" name="autoSwitchCube" value="cubeSwtich2" data-icon='2 Cube'><label for="AutoRadio3-3"></label><br>
+          <input class="YN" type="radio" id="AutoRadio3-3" name="autoSwitchCube" value="cubeSwitch2" data-icon='2 Cube'><label for="AutoRadio3-3"></label><br>
         {{/if}}
     
 
       <br>
-      <h1>Correct Scale Found</h1>
-      <input class="YN" type="radio" id="AutoRadio4-1" name="scaleFound" value="foundYes" data-icon='&#xf00c;'><label for="AutoRadio4-1"></label>
-      <input class="YN" type="radio" id="AutoRadio4-2" name="scaleFound" value="foundNo" data-icon='&#xf00d;'><label for="AutoRadio4-2"></label><br>
+      <h1>Scale Attempted</h1>
+      <input class="YN" type="radio" id="AutoRadio4-1" name="scaleAttempted" value="attemptYes" data-icon='&#xf00c;'><label for="AutoRadio4-1"></label>
+      <input class="YN" type="radio" id="AutoRadio4-2" name="scaleAttempted" value="attemptNo" data-icon='&#xf00d;'><label for="AutoRadio4-2"></label><br>
 
         {{#if scaleUnlock}}
       
@@ -179,7 +179,7 @@
 
       <br>
       <h1>Endgame</h1>
-      <input class="YN" type="radio" id="TeleRadio9-1" name="endgame" value="parkNo" data-icon='NotParked'><label for="TeleRadio9-1" ></label>
+      <input class="YN" type="radio" id="TeleRadio9-1" name="endgame" value="parkNo" data-icon='Not Parked'><label for="TeleRadio9-1" ></label>
       <input class="YN" type="radio" id="TeleRadio9-2" name="endgame" value="parkYes" data-icon='Parked'><label for="TeleRadio9-2" ></label>
       <input class="YN" type="radio" id="TeleRadio9-3" name="endgame" value="Climbed" data-icon='Climb'><label for="TeleRadio9-3" ></label>
       

@@ -6,10 +6,10 @@ var currentSearch = new ReactiveVar("");
 
 //Auto stuff
 var switchScored = new ReactiveVar(0);
-var switchAttempted = new ReactiveVar(0);
+var SwitchAttempted = new ReactiveVar(0);
 
 var scaleScored = new ReactiveVar(0);
-var scaleAttempted = new ReactiveVar(0);
+var ScaleAttempted = new ReactiveVar(0);
 
 var vaultScored = new ReactiveVar(0);
 
@@ -65,7 +65,7 @@ Template.matchDataInsert.events({
 		e.preventDefault()
 		
 
-		switchAttempted.set(switchAttempted.get() - 1)
+		SwitchAttempted.set(SwitchAttempted.get() - 1)
 		//console.log(Gears.get())
 
 		
@@ -74,7 +74,7 @@ Template.matchDataInsert.events({
 	'click #addSwitchCubeAttempted': function (e) {
 		e.preventDefault()
 
-		switchAttempted.set(switchAttempted.get() + 1)
+		SwitchAttempted.set(SwitchAttempted.get() + 1)
 		//console.log(Gears.get())
 		
 	},
@@ -99,12 +99,12 @@ Template.matchDataInsert.events({
 
 	'click #subtractScaleCubeAttempted': function (e) {
 		e.preventDefault()
-		scaleAttempted.set(scaleAttempted.get() - 1)
+		ScaleAttempted.set(ScaleAttempted.get() - 1)
 	},
 
 	'click #addScaleCubeAttempted': function (e) {
 		e.preventDefault()
-		scaleAttempted.set(scaleAttempted.get() + 1)
+		ScaleAttempted.set(ScaleAttempted.get() + 1)
 	},
 
 	'click #subtractScaleCube': function (e) {
@@ -175,6 +175,7 @@ Template.matchDataInsert.events({
 
 	'click #submitMatchData': function (e) {
 		
+		
 		var matchData = {};
 
 		//Match Info Values
@@ -189,7 +190,7 @@ Template.matchDataInsert.events({
 			
 			if(switchUnlock.get()){
 				
-				var switchFound = "true";
+				var autoSwitchAttempted = "true";
 				var autoSwitchCube = $('input[name=autoSwitchCube]:checked').val();
 			}
 			else if(switchUnlock.get() === ""){
@@ -197,43 +198,43 @@ Template.matchDataInsert.events({
 			}
 			else{
 
-				var switchFound = "false";
+				var autoSwitchAttempted = "false";
 				var autoSwitchCube = "Locked";
 			}
 
 			if(scaleUnlock.get()){
-				var scaleFound = "true";
+				var autoScaleAttempted = "true";
 				var autoScaleCube = $('input[name=autoScaleCube]:checked').val();
 			}
 			else if(scaleUnlock.get() === ""){
 				
 			}
 			else{
-				var scaleFound = "false";
+				var autoScaleAttempted = "false";
 				var autoScaleCube = "Locked";
 			}
 		}
 		else if(baselineUnlock.get() === undefined){
 			baselineCrossed = undefined;
-			var switchFound = "false";
+			var autoSwitchAttempted = "false";
 			var autoSwitchCube = "Locked";
-			var scaleFound = "false";
+			var autoScaleAttempted = "false";
 			var autoScaleCube = "Locked";
 		}		
 		else{
 			var baselineCrossed = "false";
-			var switchFound = "false";
+			var autoSwitchAttempted = "false";
 			var autoSwitchCube = "Locked";
-			var scaleFound = "false";
+			var autoScaleAttempted = "false";
 			var autoScaleCube = "Locked";
 		}
 
 				
 		//Tele-op Values
 		var teleSwitchScored = switchScored.get();
-		var teleSwitchAttempted = switchAttempted.get();
+		var SwitchCubesAttempted = SwitchAttempted.get();
 		var teleScaleScored = scaleScored.get();
-		var teleScaleAttempted = scaleAttempted.get();
+		var ScaleCubesAttempted = ScaleAttempted.get();
 		var teleVaultScored = vaultScored.get();
 
 		var teleSwitchSpeed = $('input[name=switchSpeed]:checked').val();
@@ -249,7 +250,7 @@ Template.matchDataInsert.events({
 				var teleClimb = "true";
 			}
 			if($('input[name=climbWork]:checked').val() === undefined){
-				
+								
 			}
 			else{
 				var teleClimb = "false";
@@ -272,14 +273,14 @@ Template.matchDataInsert.events({
            	(isBad(allianceS)) ||
            	(isBad(scouter)) ||
         	(isBad(baselineCrossed)) ||
-           	(isBad(switchFound)) ||
+           	(isBad(autoSwitchAttempted)) ||
         	(isBad(autoSwitchCube)) ||
-           	(isBad(scaleFound)) ||
+           	(isBad(autoScaleAttempted)) ||
            	(isBad(autoScaleCube)) ||
             (isBad(teleSwitchScored)) ||
-            (isBad(teleSwitchAttempted)) ||
+            (isBad(SwitchCubesAttempted)) ||
             (isBad(teleScaleScored)) ||
-            (isBad(teleScaleAttempted)) ||
+            (isBad(ScaleCubesAttempted)) ||
             (isBad(teleVaultScored)) ||            
             (isBad(teleSwitchSpeed)) ||
             (isBad(teleScaleSpeed)) ||
@@ -311,15 +312,15 @@ Template.matchDataInsert.events({
 			scouter:scouter, 
 
 			//Auto Info
-			switchFound:switchFound,
+			autoSwitchAttempted:autoSwitchAttempted,
 			autoSwitchCube:autoSwitchCube,
 			baselineCrossed:baselineCrossed,
-			scaleFound:scaleFound,
+			autoScaleAttempted:autoScaleAttempted,
 			autoScaleCube:autoScaleCube,
 
 			//Tele-op Info
 			teleSwitchScored:teleSwitchScored,
-			teleSwitchAttempted:teleSwitchAttempted,
+			SwitchCubesAttempted:SwitchCubesAttempted,
 			teleScaleScored:teleScaleScored,
 			teleSwitchSpeed:teleSwitchSpeed,
 			teleScaleSpeed:teleScaleSpeed,
@@ -327,8 +328,8 @@ Template.matchDataInsert.events({
 			teleDied:teleDied,
 			endgame:endgame,
 			teleClimb:teleClimb,
-			teleSpeed:teleClimbSpeed,
-			teleScaleAttempted:teleScaleAttempted,
+			teleClimbSpeed:teleClimbSpeed,
+			ScaleCubesAttempted:ScaleCubesAttempted,
 			defense:defense,
 			evasion:evasion,
 			teleVaultScored:teleVaultScored,
@@ -386,7 +387,7 @@ Template.data.helpers({
 Template.matchDataInsert.helpers({
 	
 	SwitchCubesAttempted: function() {
-		return switchAttempted.get();
+		return SwitchAttempted.get();
 	},
 
 	SwitchCubesScored: function() {
@@ -394,7 +395,7 @@ Template.matchDataInsert.helpers({
 	},
 
 	ScaleCubesAttempted: function() {
-		return scaleAttempted.get();
+		return ScaleAttempted.get();
 	},
 
 	ScaleCubesScored: function() {
