@@ -108,13 +108,13 @@ Template.strategy.events({
 		$("#blue2").val(blue2.get())
 		$("#blue3").val(blue3.get())
 
-		red1.set('1325')
-		red2.set('1325')
-		red3.set('1325')
+		red1.set('299')
+		red2.set('299')
+		red3.set('299')
 
-		blue1.set('1360')
-		blue2.set('1360')
-		blue3.set('1360')
+		blue1.set('299')
+		blue2.set('299')
+		blue3.set('299')
 
 		//console.log(SortedData())
 		//console.log(SortedData()[red1.get()]);
@@ -227,13 +227,13 @@ Template.strategy.helpers({
 	},
 
 	//STRATS FOR RED AND BLUE TEAMS
-	RedStrats: function() {
-		return AdvancedStats(red1.get(),red2.get(),red3.get());
-	},
+	// RedStrats: function() {
+	// 	return AdvancedStats(red1.get(),red2.get(),red3.get());
+	// },
 
-	BlueStrats: function() {
-		return AdvancedStats(blue1.get(), blue2.get(), blue3.get());
-	},
+	// BlueStrats: function() {
+	// 	return AdvancedStats(blue1.get(), blue2.get(), blue3.get());
+	// },
 
 
 

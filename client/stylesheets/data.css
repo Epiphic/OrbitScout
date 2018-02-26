@@ -43,6 +43,10 @@ div.page-header{
 	text-align: center;
 }
 
+td.lookuptable{
+  border:1px solid black;
+
+}
 
 
 //Forms formatting and prettyings
