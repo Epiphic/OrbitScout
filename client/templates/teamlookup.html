@@ -1,6 +1,6 @@
 <template name="teamlookup">
 
-	 <!--{{#if isInRole 'Viewer'}}-->
+	 {{#if isInRole 'Viewer'}}
 
 
           <div>
@@ -168,10 +168,10 @@
 				</div>
 			          
           </div>
-     <!--{{/if}}-->
+     
      
      {{Teamlookup.averages.qualitative}} 
 	<img src={{TeamPicture}}>
-	
+	{{/if}}
 </template>	
 

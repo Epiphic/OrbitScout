@@ -1,5 +1,5 @@
 <template name="data">
-	 <!--{{#if isInRole 'Viewer'}}-->
+	 {{#if isInRole 'Viewer'}}
           <div>
 	<!--<button class="allDataShow">Show All Data</button>-->
 	<input id="buttonDownload" class="btn btn-info" type="submit" value="Download as CSV">
@@ -70,7 +70,7 @@
 	{{/each}}
 
 	</div>
-        <!--{{/if}}-->
+        {{/if}}
 
 	
 </template>

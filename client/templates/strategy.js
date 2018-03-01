@@ -108,13 +108,13 @@ Template.strategy.events({
 		$("#blue2").val(blue2.get())
 		$("#blue3").val(blue3.get())
 
-		red1.set('1360')
-		red2.set('299')
-		red3.set('1477')
+		// red1.set('1360')
+		// red2.set('299')
+		// red3.set('1477')
 
-		blue1.set('1114')
-		blue2.set('1241')
-		blue3.set('2609')
+		// blue1.set('1114')
+		// blue2.set('1241')
+		// blue3.set('2609')
 
 		//console.log(SortedData())
 		//console.log(SortedData()[red1.get()]);

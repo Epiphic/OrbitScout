@@ -1,6 +1,6 @@
 <template name="matchDataInsert">
 
- <!--{{#if isInRole 'Viewer'}}-->
+ {{#if isInRole 'Viewer'}}
 
     <div>
     <form>
@@ -285,13 +285,13 @@
     </div>
 
     
-   <!--{{#if isInRole 'Scouter'}}-->
+   {{#if isInRole 'Scouter'}}
     <input id="submitMatchData" class="btn btn-info" type="submit" value="Submit Data">
-  <!--{{/if}}-->
+  {{/if}}
 </form>
     
     </div>
-  <!--{{/if}}-->
+  {{/if}}
 
   	  	
 </template>

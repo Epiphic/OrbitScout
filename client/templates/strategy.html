@@ -1,5 +1,7 @@
-<template name="strategy" >
- 	<!--{{#if isInRole 'Viewer'}}-->
+
+
+<template name="strategy">
+ {{#if isInRole 'Viewer'}}	
 
 	<select id="strategySearch" class="form-control">
 	    <option value="Manual">Search for Matches: Manual</option>
@@ -9,12 +11,12 @@
     <br>
     <tr>
 	    <td>Team Number: </td>
-	    <td><input type="text" id="red1"  placeholder="Team Number Ex. 1360"></td> 
-	    <td><input type="text" id="red2"  placeholder="Team Number Ex. 4946"></td>
-	    <td><input type="text" id="red3"  placeholder="Team Number Ex. 1114"></td>
-	    <td><input type="text" id="blue1" placeholder="Team Number Ex. 2056"></td>
-	    <td><input type="text" id="blue2" placeholder="Team Number Ex. 4001"></td>
-	    <td><input type="text" id="blue3" placeholder="Team Number Ex. 771"></td>
+	    <td><input type="text" id="red1"  placeholder="Red 1 Ex. 1360"></td> 
+	    <td><input type="text" id="red2"  placeholder="Red 2 Ex. 4946"></td>
+	    <td><input type="text" id="red3"  placeholder="Red 3 Ex. 1114"></td>
+	    <td><input type="text" id="blue1" placeholder="Blue 1 Ex. 2056"></td>
+	    <td><input type="text" id="blue2" placeholder="Blue 2 Ex. 4001"></td>
+	    <td><input type="text" id="blue3" placeholder="Blue 3 Ex. 771"></td>
 	</tr>
 	<br>
 	<br>
@@ -829,7 +831,6 @@
 	  </div>
 
 	</div>
-
-	
+{{/if}}
 </template>
 
