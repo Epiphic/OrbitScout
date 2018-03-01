@@ -46,42 +46,45 @@
 
       <br>
       <h1>Auto Mobility</h1>      
+
+        <h2>        
+          <input class="radio-btn" type="radio" id="AutoRadio1-1" name="crossedBaseline" value="crossYes"><label for="AutoRadio1-1">YES</label>                       
+          <input class="radio-btn" type="radio" id="AutoRadio1-2" name="crossedBaseline" value="crossNo"><label for="AutoRadio1-2">NO</label>
+        </h2>
       
-      <div class="wrapper"><input class="YN" type="radio" id="AutoRadio1-1" name="crossedBaseline" value="crossYes" data-icon='&#xf00c;'><label for="AutoRadio1-1"></label></div>
-      
-      <input class="YN" type="radio" id="AutoRadio1-2" name="crossedBaseline" value="crossNo" data-icon='&#xf00d;'><label for="AutoRadio1-2"></label><br>
+      <br>
     
-    <div class="Unlocked">
+   <!--  <div class="Unlocked"> -->
          
      {{#if baselineCrossedUnlock}}
           <h1>Switch Attempted</h1>          
-          <input class="YN" type="radio" id="AutoRadio2-1" name="switchAttempted" value="attemptYes" data-icon='&#xf00c;'><label for="AutoRadio2-1"></label>
-          <input class="YN" type="radio" id="AutoRadio2-2" name="switchAttempted" value="attemptNo" data-icon='&#xf00d;'><label for="AutoRadio2-2"></label><br>
+          <input class="radio-btn" type="radio" id="AutoRadio2-1" name="switchAttempted" value="attemptYes"><label for="AutoRadio2-1">YES</label>
+          <input class="radio-btn" type="radio" id="AutoRadio2-2" name="switchAttempted" value="attemptNo"><label for="AutoRadio2-2">NO</label><br>
                            
         {{#if switchUnlock}}
              
           <h1>Cubes scored in switch</h1>
-          <input class="YN" type="radio" id="AutoRadio3-1" name="autoSwitchCube" value="cubeSwitch0" data-icon='0 Cube' ><label for="AutoRadio3-1"></label>
-          <input class="YN" type="radio" id="AutoRadio3-2" name="autoSwitchCube" value="cubeSwitch1" data-icon='1 Cube'><label for="AutoRadio3-2"></label>
-          <input class="YN" type="radio" id="AutoRadio3-3" name="autoSwitchCube" value="cubeSwitch2" data-icon='2 Cube'><label for="AutoRadio3-3"></label><br>
+          <input class="radio-btn" type="radio" id="AutoRadio3-1" name="autoSwitchCube" value="cubeSwitch0"><label for="AutoRadio3-1">0 CUBE</label>
+          <input class="radio-btn" type="radio" id="AutoRadio3-2" name="autoSwitchCube" value="cubeSwitch1"><label for="AutoRadio3-2">1 CUBE</label>
+          <input class="radio-btn" type="radio" id="AutoRadio3-3" name="autoSwitchCube" value="cubeSwitch2"><label for="AutoRadio3-3">2 CUBE</label><br>
         {{/if}}
     
 
       <br>
       <h1>Scale Attempted</h1>
-      <input class="YN" type="radio" id="AutoRadio4-1" name="scaleAttempted" value="attemptYes" data-icon='&#xf00c;'><label for="AutoRadio4-1"></label>
-      <input class="YN" type="radio" id="AutoRadio4-2" name="scaleAttempted" value="attemptNo" data-icon='&#xf00d;'><label for="AutoRadio4-2"></label><br>
+      <input class="radio-btn" type="radio" id="AutoRadio4-1" name="scaleAttempted" value="attemptYes"><label for="AutoRadio4-1">YES</label>
+      <input class="radio-btn" type="radio" id="AutoRadio4-2" name="scaleAttempted" value="attemptNo"><label for="AutoRadio4-2">NO</label><br>
 
         {{#if scaleUnlock}}
       
         <h1>Cubes scored in scale</h1>
-        <input class="YN" type="radio" id="AutoRadio5-1" name="autoScaleCube" value="cubeScale0" data-icon='0 Cube'><label for="AutoRadio5-1"></label>
-        <input class="YN" type="radio" id="AutoRadio5-2" name="autoScaleCube" value="cubeScale1" data-icon='1 Cube'><label for="AutoRadio5-2"></label>
-        <input class="YN" type="radio" id="AutoRadio5-3" name="autoScaleCube" value="cubeScale2" data-icon='2 Cube'><label for="AutoRadio5-3"></label><br>
+        <input class="radio-btn" type="radio" id="AutoRadio5-1" name="autoScaleCube" value="cubeScale0"><label for="AutoRadio5-1">0 CUBE</label>
+        <input class="radio-btn" type="radio" id="AutoRadio5-2" name="autoScaleCube" value="cubeScale1"><label for="AutoRadio5-2">1 CUBE</label>
+        <input class="radio-btn" type="radio" id="AutoRadio5-3" name="autoScaleCube" value="cubeScale2"><label for="AutoRadio5-3">2 CUBE</label><br>
         {{/if}}
            
       {{/if}}
-    </div>
+<!--     </div> -->
       <br>
 
 
@@ -181,23 +184,23 @@
 
       <br>
       <h1>Endgame</h1>
-      <input class="YN" type="radio" id="TeleRadio9-1" name="endgame" value="parkNo" data-icon='Not Parked'><label for="TeleRadio9-1" ></label>
-      <input class="YN" type="radio" id="TeleRadio9-2" name="endgame" value="parkYes" data-icon='Parked'><label for="TeleRadio9-2" ></label>
-      <input class="YN" type="radio" id="TeleRadio9-3" name="endgame" value="Climbed" data-icon='Climb'><label for="TeleRadio9-3" ></label>
+      <input class="radio-btn" type="radio" id="TeleRadio9-1" name="endgame" value="parkNo"><label for="TeleRadio9-1">Not Parked</label>
+      <input class="radio-btn" type="radio" id="TeleRadio9-2" name="endgame" value="parkYes"><label for="TeleRadio9-2"> Parked</label>
+      <input class="radio-btn" type="radio" id="TeleRadio9-3" name="endgame" value="Climbed"><label for="TeleRadio9-3"> Climb</label>
       
-     
-      <div class="Unlocked">
+<!--       <div class="Unlocked">      
+ -->     
         {{#if climbUnlock}}
           <br>
           <h1>Type of climb?</h1>
-          <input class="YN" type="radio" id="TeleRadio3-1" name="endgame" value="climbOtherTeam" data-icon='Lifted by Partner'><label for="TeleRadio3-1"></label>
-          <input class="YN" type="radio" id="TeleRadio3-2" name="endgame" value="climbOne" data-icon='Scaled 1 bot'><label for="TeleRadio3-2"></label>
-          <input class="YN" type="radio" id="TeleRadio3-3" name="endgame" value="climbTwo" data-icon='Scaled 2 bots'><label for="TeleRadio3-3"></label>
-          <input class="YN" type="radio" id="TeleRadio3-4" name="endgame" value="climbThree" data-icon='Scaled 3 Bots'><label for="TeleRadio3-4"></label>
+          <input class="radio-btn" type="radio" id="TeleRadio3-1" name="endgame" value="climbOtherTeam"><label for="TeleRadio3-1">Lifted by Partner</label>
+          <input class="radio-btn" type="radio" id="TeleRadio3-2" name="endgame" value="climbOne"><label for="TeleRadio3-2">Climbed 1 Bot</label>
+          <input class="radio-btn" type="radio" id="TeleRadio3-3" name="endgame" value="climbTwo"><label for="TeleRadio3-3">Climbed 2 Bots</label>
+          <input class="radio-btn" type="radio" id="TeleRadio3-4" name="endgame" value="climbThree"><label for="TeleRadio3-4">Climbed 3 Bots</label>
 
           <h1>Did it work?</h1>
-          <input class="YN" type="radio" id="TeleRadio10-1" name="climbWork" value="climbYes" data-icon='&#xf00c;'><label for="TeleRadio10-1"></label>
-          <input class="YN" type="radio" id="TeleRadio10-2" name="climbWork" value="climbNo" data-icon='&#xf00d;'><label for="TeleRadio10-2"></label>
+          <input class="radio-btn" type="radio" id="TeleRadio10-1" name="climbWork" value="climbYes"><label for="TeleRadio10-1">YES</label>
+          <input class="radio-btn" type="radio" id="TeleRadio10-2" name="climbWork" value="climbNo"><label for="TeleRadio10-2">NO</label>
                     
           <br>
           <h1>How long did their climb take?</h1>
@@ -211,24 +214,17 @@
           </center>
          
        {{/if}}
-    </div>
-    
-       <br>
+      <!-- </div>  -->
       <h1>Did they struggle placing cubes?</h1>
-      <div class="col-sm-12">
+     
         
             
-      <div class="row">
-        <div class="col-sm-3"><input class="YN" type="radio" id="TeleRadio4-1" name="struggle" value="struggleYesScale" data-icon='Yes Scale'><label for="TeleRadio4-1"></label></div>
-
-        <div class="col-sm-3"><input class="YN" type="radio" id="TeleRadio4-2" name="struggle" value="struggleYesSwitch" data-icon='Yes Switch'><label for="TeleRadio4-2"></label></div>
-
-        <div class="col-sm-3"><input class="YN" type="radio" id="TeleRadio4-3" name="struggle" value="struggleYesBoth" data-icon='Yes Both'><label for="TeleRadio4-3"></label></div>
-
-        <div class="col-sm-3"><input class="YN" type="radio" id="TeleRadio4-4" name="struggle" value="struggleNo" data-icon='No'><label for="TeleRadio4-4"></label></div>
-      </div>
-      </div>  
-      
+     
+        <input class="radio-btn" type="radio" id="TeleRadio4-1" name="struggle" value="struggleYesScale"><label for="TeleRadio4-1">Scale</label>
+        <input class="radio-btn" type="radio" id="TeleRadio4-2" name="struggle" value="struggleYesSwitch"><label for="TeleRadio4-2">Switch</label>
+        <input class="radio-btn" type="radio" id="TeleRadio4-3" name="struggle" value="struggleYesBoth"><label for="TeleRadio4-3">Both</label>
+        <input class="radio-btn" type="radio" id="TeleRadio4-4" name="struggle" value="struggleNo"><label for="TeleRadio4-4">No</label>
+    
       
       
       <br>
@@ -237,8 +233,8 @@
 
       <br>
       <h1>Did they die during their match?</h1>
-      <input class="YN" type="radio" id="TeleRadio6-1" name="matchDied" value="Yes" data-icon='&#xf00c;'><label for="TeleRadio6-1"></label>
-      <input class="YN" type="radio" id="TeleRadio6-2" name="matchDied" value="No" data-icon='&#xf00d;'><label for="TeleRadio6-2"></label><br>
+      <input class="radio-btn" type="radio" id="TeleRadio6-1" name="matchDied" value="Yes"><label for="TeleRadio6-1">YES</label>
+      <input class="radio-btn" type="radio" id="TeleRadio6-2" name="matchDied" value="No"><label for="TeleRadio6-2">NO</label><br>
 
     </div>
 <!---===============================================QUALITATIVE DATA========================================-->

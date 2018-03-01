@@ -91,6 +91,11 @@ background-color: tomato !important;
 border-color: tomato
 }
 
+.blue{
+background-color: dodgerblue !important;
+border-color: dodgerblue
+}
+
 .grey{
 background-color: grey !important;
 border-color: grey
@@ -104,7 +109,7 @@ border-color: grey
 
 
 .Unlocked{
-  background-color: lightblue
+  color: darkgrey;
 }
 
 
@@ -147,41 +152,66 @@ button:active{
   padding: 1em 0;
 }
 
-input[class ='YN'] {
-  padding-top: 20px 20px;
-  white-space: normal;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -o-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: none;
-}
-input[class ='YN']:focus {
-  outline: 0;
-}
-input[class ='YN']:after {
-  font-family: 'FontAwesome';
-  display: inline-block;
-  text-align: center;
-  font-size: 80px;
-  content: attr(data-icon);
-  padding: 20px 20px;
-  border-radius: 15px;
-  color: rgba(0, 0, 0, .4);
-  transition: box-shadow 1s, color 1s;
-}
-input[class ='YN']:not(:checked) {
-  box-shadow: 2px 2px 14px rgba(0, 0, 0, .4);
-  border-radius: 15px;
-}
-input[class ='YN']:checked:after {
-  box-shadow: 2px 2px 14px rgba(0, 0, 0, .4);
-  color: rgba(255, 255, 255, .6);
+
+
+
+
+
+
+.center-on-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
-.wrapper{
-    width: 200px;
-    border: 1px solid #f00;
-    overflow: hidden;
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+label {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 10px;
+  line-height: 36px;
+  cursor: pointer;
+}
+label::before {
+  content: " ";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #3080d1;
+  border-radius: 4px;
+  z-index: -1;
+}
+input[type="radio"] + label::before {
+  border-radius: 10px;
+}
+/* Checked */
+
+input[type="radio"]:checked + label {
+  padding-left: 10px;
+  color: #fff;
+}
+
+input[type="radio"]:checked + label::before {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #3080d1;
+}
+/* Transition */
+label,
+label::before {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
 }
