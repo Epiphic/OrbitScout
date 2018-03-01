@@ -249,7 +249,7 @@ Template.matchDataInsert.events({
 			if($('input[name=climbWork]:checked').val() === "climbYes"){
 				var teleClimb = "true";
 			}
-			if($('input[name=climbWork]:checked').val() === undefined){
+			else if($('input[name=climbWork]:checked').val() === undefined){
 								
 			}
 			else{
