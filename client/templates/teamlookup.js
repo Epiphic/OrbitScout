@@ -51,7 +51,7 @@ Template.teamlookup.helpers({
                 columns: TeamGraph(lookup.get()),
                 type: 'bar',
                 groups: [
-                       ['Tele-Op', 'End-Game', 'Auto', 'Presto']
+                       ['Tele-Op', 'End-Game', 'Auto']
                         ]
                     },  
            

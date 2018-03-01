@@ -170,49 +170,7 @@ $colHover       : #ffe6d1;
 
 
 
-input[class ='YN'] {
-    padding-top: 5px;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    white-space: normal;
-    
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: none;
-    
-    
-    &:focus{
-		outline:0;
-    }
-    
-    &:after {
-        font-family: 'FontAwesome';
-        display: inline-block;
-        text-align: center;
-        font-size: 80px;
-        content: attr(data-icon);
-        padding: 20px 20px;
-        border-radius: 15px;
-        color: rgba(0,0,0,.4);
-        transition: box-shadow 1s, color 1s;
-    }
 
-    &:not(:checked) {
-        box-shadow: 2px 2px 14px rgba(0,0,0,.4);
-        border-radius: 15px;
-    }
-
-    &:checked {
-        &:after {
-            box-shadow: 2px 2px 14px rgba(0,0,0,.4);
-            color: rgba(255,255,255,.6);
-        }
-    }
-}
 
 form {
     
