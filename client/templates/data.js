@@ -187,7 +187,7 @@ Template.matchDataInsert.events({
 	
 
 	'click #submitMatchData': function (e) {
-		 
+		
 		
 		var matchData = {};
 
@@ -302,7 +302,7 @@ Template.matchDataInsert.events({
 
 		var teleSwitchSpeed = $('input[name=switchSpeed]:checked').val();
 		var teleScaleSpeed = $('input[name=scaleSpeed]:checked').val();
-		var teleScaleSpeed = $('input[name=vaultSpeed]:checked').val();
+		var teleVaultSpeed = $('input[name=vaultSpeed]:checked').val();
 
 		var teleStruggle = $('input[name=struggle]:checked').val();
 		var teleDied = $('input[name=matchDied]:checked').val();
