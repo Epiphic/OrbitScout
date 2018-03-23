@@ -64,8 +64,11 @@ Template.matchDataInsert.events({
 	'click #subtractSwitchCubeAttempted': function (e) {
 		e.preventDefault()
 		
+		if(SwitchAttempted.get()>0){
+			SwitchAttempted.set(SwitchAttempted.get() - 1)
+		}
 
-		SwitchAttempted.set(SwitchAttempted.get() - 1)
+		
 		//console.log(Gears.get())
 
 		
@@ -82,8 +85,9 @@ Template.matchDataInsert.events({
 	'click #subtractSwitchCube': function (e) {
 		e.preventDefault()
 		
-
-		switchScored.set(switchScored.get() - 1)
+		if(switchScored.get()>0){
+			switchScored.set(switchScored.get() - 1)
+		}
 		//console.log(Gears.get())
 
 		
@@ -99,7 +103,10 @@ Template.matchDataInsert.events({
 
 	'click #subtractScaleCubeAttempted': function (e) {
 		e.preventDefault()
+
+		if(ScaleAttempted.get()>0){
 		ScaleAttempted.set(ScaleAttempted.get() - 1)
+		}
 	},
 
 	'click #addScaleCubeAttempted': function (e) {
@@ -109,7 +116,10 @@ Template.matchDataInsert.events({
 
 	'click #subtractScaleCube': function (e) {
 		e.preventDefault()
+
+		if(scaleScored.get()>0){
 		scaleScored.set(scaleScored.get() - 1)
+		}
 
 	},
 
@@ -129,7 +139,10 @@ Template.matchDataInsert.events({
 
 	'click #subtractVaultCube': function (e) {
 		e.preventDefault()
+
+		if(vaultScored.get()>0){
 		vaultScored.set(vaultScored.get() - 1)
+		}
 
 	},
 
@@ -174,13 +187,63 @@ Template.matchDataInsert.events({
 	
 
 	'click #submitMatchData': function (e) {
-		
+		 
 		
 		var matchData = {};
 
 		//Match Info Values
-		var numb = $('.newMatchNumber').val();
+
 		var team = $('.newMatchTeam').val();
+
+		if(
+			team != "188" &&
+			team != "746" &&
+			team != "771" &&
+			team != "854" &&
+			team!= "907" &&
+			team!= "919" &&
+			team!= "1075" &&
+			team!= "1310" && 
+			team!= "1325" &&
+			team!= "1360" &&
+			team!= "4001" &&
+			team!= "4343" &&
+			team!= "4613" &&
+			team!= "4939" &&
+			team!= "4946" &&
+			team!= "4976" &&
+			team!= "5031" &&
+			team!= "5036" &&
+			team!= "5428" &&
+			team!= "5519" &&
+			team!= "5699" &&
+			team!= "5776" &&
+			team!= "5921" &&
+			team!= "6009" &&
+			team!= "6135" &&
+			team!= "6140" &&
+			team!= "6141" &&
+			team!= "6397" &&
+			team!= "6513" &&
+			team!= "6564" &&
+			team!= "6632" &&
+			team!= "6867" &&
+			team!= "6975" &&
+			team!= "7013" &&
+			team!= "7136" &&
+			team!= "7329"){
+
+			alert("INVALID TEAM NUMBER");
+
+   			 e.preventDefault();
+		}
+
+		else{
+			var team = $('.newMatchTeam').val();
+		}
+		
+		var numb = $('.newMatchNumber').val();
+		
 		var allianceS = $('#newAllianceStation').val();
 		var scouter = $('.newScouter').val();
 
@@ -239,6 +302,8 @@ Template.matchDataInsert.events({
 
 		var teleSwitchSpeed = $('input[name=switchSpeed]:checked').val();
 		var teleScaleSpeed = $('input[name=scaleSpeed]:checked').val();
+		var teleScaleSpeed = $('input[name=vaultSpeed]:checked').val();
+
 		var teleStruggle = $('input[name=struggle]:checked').val();
 		var teleDied = $('input[name=matchDied]:checked').val();
 
@@ -284,6 +349,7 @@ Template.matchDataInsert.events({
             (isBad(teleVaultScored)) ||            
             (isBad(teleSwitchSpeed)) ||
             (isBad(teleScaleSpeed)) ||
+            (isBad(teleVaultSpeed)) ||
             (isBad(teleStruggle)) ||
             (isBad(teleDied)) ||
 			(isBad(endgame)) ||
@@ -324,6 +390,7 @@ Template.matchDataInsert.events({
 			teleScaleScored:teleScaleScored,
 			teleSwitchSpeed:teleSwitchSpeed,
 			teleScaleSpeed:teleScaleSpeed,
+			teleVaultSpeed:teleVaultSpeed,
 			teleStruggle:teleStruggle,
 			teleDied:teleDied,
 			endgame:endgame,
