@@ -141,21 +141,19 @@
 						</tr>
 
 						<tr>
-						    <td></td>
-						    <td></td> 
-						    <td></td>
-						    <td></td>
-						    <td></td>
-						    <td></td>
-						</tr>
-
-						<tr>
 						    <td>Evasion Rating: </td>
-						    <td>{{Teamlookup.advancedaverages.evasionRating}}</td> 
+						    <td>{{Teamlookup.advancedaverages.evasionRating}}</td>
+						    <td>Vault Speed Avg:</td>
+						    <td>
+						    	<div class="progress">
+								  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{Teamlookup.advancedaverages.VaultSpeed}}%; color: silver;">
+								   {{Teamlookup.advancedaverages.VaultSpeed}}%
+								  </div>
+								</div>
+						    </td>
 						    <td>Defense Rating:</td>
 						    <td>{{Teamlookup.advancedaverages.defenseRating}}</td>
-						    <td></td>
-						    <td></td>
+						    
 						</tr>
 
 
