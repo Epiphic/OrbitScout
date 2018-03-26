@@ -47,7 +47,7 @@ Template.data.events({
 	},
 		//events
 	'click #buttonDownload': function(event) {
-	  var nameFile = 'fileDownloaded.csv';
+	  var nameFile = 'ScoutingData.csv';
 	  Meteor.call('download', function(err, fileContent) {
 	    if(fileContent){
 	      var blob = new Blob([fileContent], {type: "text/plain;charset=utf-8"});
@@ -97,6 +97,7 @@ Template.matchDataInsert.events({
 		e.preventDefault()
 
 		switchScored.set(switchScored.get() + 1)
+		SwitchAttempted.set(SwitchAttempted.get() + 1)
 		//console.log(Gears.get())
 		
 	},
@@ -127,6 +128,7 @@ Template.matchDataInsert.events({
 		e.preventDefault()
 
 		scaleScored.set(scaleScored.get() + 1)
+		ScaleAttempted.set(ScaleAttempted.get() + 1)
 			
 	},
 
@@ -208,7 +210,7 @@ Template.matchDataInsert.events({
 			team!= "1360" &&
 			team!= "4001" &&
 			team!= "4343" &&
-			team!= "4613" &&
+			team!= "4618" &&
 			team!= "4939" &&
 			team!= "4946" &&
 			team!= "4976" &&
