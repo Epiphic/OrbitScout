@@ -1,0 +1,20 @@
+<template name="picklist">
+
+{{#if isInRole 'Viewer'}}
+    <div>
+	<input id="eventRefresh" class="btn btn-info" type="submit" value="Refresh">
+
+	<div id="table">
+    	{{> reactiveTable collection=TeamTable settings=settings}}
+  	</div>
+
+
+    </div>
+
+  {{/if}}
+	
+
+  
+
+</template>
+
