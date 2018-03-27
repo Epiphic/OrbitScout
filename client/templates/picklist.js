@@ -12,21 +12,26 @@ Template.picklist.events({
 			TeamStats.set([]);
 			TotalStats = [];
 
+			console.log(Object.keys(SortedData()).length)
 
-			for(i=0; i <= SortedData().teams.length(); i++){				
+			for(i=0; i < Object.keys(SortedData()).length; i++){	
 
-					currentTeam = SortedData.teams[i];
+				console.log(Object.keys(SortedData())[i])			
+
+					currentTeam = SortedData()[Object.keys(SortedData())[i]];
+
+					
 
 					teamMatches = {
 
 
-	                Team: SortedData.teams[i],
+	                Team: Object.keys(SortedData())[i],
 
-	                SwitchCubes: currentTeam.advancedaverages.SwitchCubesAvg,
+	                SwitchCubes: currentTeam.advancedaverages.SwitchCubeAvg,
 
-	                ScaleCubes: currentTeam.advancedaverages.ScaleCubesAvg,
+	                ScaleCubes: currentTeam.advancedaverages.ScaleCubeAvg,
 
-	                VaultCubes: currentTeam.advancedaverages.VaultCubesAvg,
+	                VaultCubes: currentTeam.advancedaverages.VaultCubeAvg,
 
 	                SwitchAuto: currentTeam.advancedaverages.autoSwitchAvg,
 
@@ -62,13 +67,13 @@ Template.picklist.helpers({
 		            fields:
 		             [
 
-		            { key: 'Team', label: 'Team #'},
-		            { key: 'SwitchCubes', label: 'Switch Cubes'},
-		            { key: 'ScaleCubes', label: 'Scale Cubes'},
-		            { key: 'VaultCubes', label: 'Vault Cubes'},
-		            { key: 'SwitchAuto', label: 'Switch Auto'},
-		            { key: 'ScaleAuto', label: 'Scale Auto'},
-		            { key: 'DefenseRating', label: 'Defense Rating'}
+		            { key: 'Team', label: 'Team #', cellClass: (value, object) => "table-info"},
+		            { key: 'SwitchCubes', label: 'Switch Cubes', cellClass: (value, object) => "table-info"},
+		            { key: 'ScaleCubes', label: 'Scale Cubes', cellClass: (value, object) => "table-info"},
+		            { key: 'VaultCubes', label: 'Vault Cubes', cellClass: (value, object) => "table-info"},
+		            { key: 'SwitchAuto', label: 'Switch Auto', cellClass: (value, object) => "table-info"},
+		            { key: 'ScaleAuto', label: 'Scale Auto', cellClass: (value, object) => "table-info"},
+		            { key: 'DefenseRating', label: 'Defense Rating', cellClass: (value, object) => "table-info"}
 
 		             ]
 		        };

@@ -12,7 +12,7 @@ Template.settings.events({
 		var TotalDuplicateArray = []
 
 		//Call the TBA api and find all the teams at the event
-		HTTP.call('GET', 'https://www.thebluealliance.com/api/v3/event/' + '2018oncmp' + '/teams?X-TBA-Auth-Key=qFdMSZDjbHO7i5OYQl7MUW2oXz4Oxrr0z74s5GR89QVA2dcWx45dfu9HpHfoUtZd', {}, function(error, response) {
+		HTTP.call('GET', 'https://www.thebluealliance.com/api/v3/event/' + '2018onnyo' + '/teams?X-TBA-Auth-Key=qFdMSZDjbHO7i5OYQl7MUW2oXz4Oxrr0z74s5GR89QVA2dcWx45dfu9HpHfoUtZd', {}, function(error, response) {
 			Teams.set(response);			
 		});
 

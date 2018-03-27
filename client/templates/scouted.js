@@ -6,7 +6,7 @@ var eventTeams = new ReactiveVar();
 Template.scouted.events({
 		'click #eventRefresh': function () {
 			
-			HTTP.call('GET', 'https://www.thebluealliance.com/api/v3/event/' + '2018oncmp' + '/matches?X-TBA-Auth-Key=qFdMSZDjbHO7i5OYQl7MUW2oXz4Oxrr0z74s5GR89QVA2dcWx45dfu9HpHfoUtZd', {}, function(error, response) {
+			HTTP.call('GET', 'https://www.thebluealliance.com/api/v3/event/' + '2018onnyo' + '/matches?X-TBA-Auth-Key=qFdMSZDjbHO7i5OYQl7MUW2oXz4Oxrr0z74s5GR89QVA2dcWx45dfu9HpHfoUtZd', {}, function(error, response) {
 			tbaMatch.set(response);
 			//console.log(tbaMatch);
 			});
