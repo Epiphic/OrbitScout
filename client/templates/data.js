@@ -210,11 +210,7 @@ Template.matchDataInsert.events({
 			team!= "1360" &&
 			team!= "4001" &&
 			team!= "4343" &&
-<<<<<<< HEAD
 			team!= "4618" &&
-=======
-			team!= "4613" &&
->>>>>>> 073f8286f21f0b0803fbe8a989b7f2d441a20957
 			team!= "4939" &&
 			team!= "4946" &&
 			team!= "4976" &&
